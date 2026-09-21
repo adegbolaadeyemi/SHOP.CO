@@ -1,17 +1,15 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
-    <title class="text-black">Shop.Co</title>
-    <link rel="icon" href="./asset/image/Frame.png" />
+    <title>Shop.Co</title>
+    <link rel="stylesheet" href="./output.css" />
     <link rel="stylesheet" href="./index.html" />
   </head>
-  <body>
-    <!-- PRODUCT SECTION -->
-        <!------ PROMO NAV ------->
-     <marquee
+  <body class="bg-white text-black font-sans antialiased">
+    <!-- TOP PROMO BANNER -->
+    <marquee
       behavior=""
       direction="right"
       speed="12"
@@ -19,262 +17,288 @@
       class="bg-black text-white z-50 top-0 fixed"
     >
       Sign up and get 20% off to your first order.
+
       <a href="" class="text-white underline">Sign Up Now</a>
     </marquee>
-         <!-- NAV BAR -->
-    <nav class="text-black py-3 md:px-10 px-5 flex md:p-10 justify-evenly fixed top-6 left-0 w-full z-50 bg-white">
-      <img
-        src="./asset/image/Frame (2).png"
-        alt=""
-        class="md:hidden block"
-        id="menu-icon"
-      />
-      <img src="./asset/image/SHOP.CO.png" alt="" />
-      <ul class="gap-10 items-center hidden md:flex">
-        <a href="./shop.html">Shop</a>
-        <a href="./category.html">On Sale</a>
-        <a href="./index.html">New Arrivals</a>
-        <a href="./index.html">Brands</a>
+
+    <!-- Desktop & Main Navbar -->
+    <nav
+      class="fixed top-6 left-0 w-full z-40 bg-white border-b border-gray-100 px-4 md:px-12 py-6 flex items-center justify-between"
+    >
+      <div class="flex items-center gap-4">
+        <img
+          src="./asset/image/Frame (2).png"
+          alt="Open Menu"
+          class="md:hidden cursor-pointer w-6 h-6"
+          id="menu-icon"
+        />
+        <a href="./index.html"
+          ><img
+            src="./asset/image/SHOP.CO.png"
+            alt="Shop.co Logo"
+            class="h-5 md:h-6"
+        /></a>
+      </div>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm font-medium">
+        <li><a href="./shop.html" class="hover:text-gray-600">Shop</a></li>
+        <li>
+          <a href="./category.html" class="hover:text-gray-600">On Sale</a>
+        </li>
+        <li>
+          <a href="./shop.html" class="hover:text-gray-600">New Arrivals</a>
+        </li>
+        <li><a href="./index.html" class="hover:text-gray-600">Brands</a></li>
       </ul>
-      <div class="bg-[#F0F0F0] rounded-2xl flex  px-2 py-1 items-center">
+
+      <!-- Search Input -->
+      <div class="bg-[#F0F0F0] rounded-2xl flex gap-1 px-2 py-1 items-center">
         <img src="./asset/image/Vector.png" alt="" class="w-4 h-4" />
+
         <input
           type="text"
           placeholder="Search for product"
-          class="outline-none hidden md:block w-96 p-1"
+          class="outline-none bg-transparent hidden md:block w-96"
         />
       </div>
-      <div class="flex md:gap-10 gap-5 items-center">
-        <a href="./cart.html"><img src="./asset/image/Frame.png" alt="" /></a>
-        <a href=""><img src="./asset/image/Frame (1).png" alt="" /></a>
+
+      <!-- Action Icons -->
+      <div class="flex items-center gap-4 md:gap-10">
+        <a href="./cart.html" class="relative">
+          <img src="./asset/image/Frame.png" alt="Cart" class="w-6 h-6" />
+          <span
+            id="cart-count"
+            class="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden"
+            >0</span
+          >
+        </a>
+        <a href="#"
+          ><img src="./asset/image/Frame (1).png" alt="Account" class="w-6 h-6"
+        /></a>
       </div>
     </nav>
-    <!-- mobile nav-bar -->
-    <nav
-      id="mobile-nav"
-      class="bg-gray-300 px-4 py-6 w-[85%] bottom-0 md:hidden hidden flex-col justify-between fixed top-0 left-0 z-999"
-    >
-      <div>
-        <img class="text-white" src="./asset/image/SHOP.CO.png" alt="" />
-      </div>
 
-      <ul class="flex flex-col gap-6">
-        <li><a href="./index.html" class="font-semibold text-2xl text-black">Home</a></li>
-        <li><a href="" class="font-semibold text-2xl text-black">Shop</a></li>
-        <li>
-          <a href="./category.html" class="font-semibold text-2xl text-black">On sale</a>
-        </li>
-        <li>
-          <a href="./index.html" class="font-semibold text-2xl text-shadow-black"
-            >New Arrivals</a
-          >
-        </li>
-        <li><a href="./index.html" class="font-semibold text-2xl text-black">Brands</a></li>
-      </ul>
-
-      <div class="flex flex-col gap-4">
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav" class="fixed inset-0 bg-black/50 z-50 hidden">
+      <div
+        class="bg-white w-[80%] max-w-sm h-full p-6 flex flex-col justify-between relative"
+      >
         <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
-        >
-          <a href="./cart.html">Cart</a>
-        </button>
-        <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
-        >
-          Account
-        </button>
-
-        <div
           id="cancel-icon"
-          class="text-black text-2xl absolute right-4 top-4"
+          class="absolute right-5 top-12 text-xl font-bold"
         >
-          X
+          ✕
+        </button>
+
+        <div class="mt-8 flex flex-col gap-6">
+          <img src="./asset/image/SHOP.CO.png" alt="Logo" class="w-32 mb-4" />
+          <ul class="flex flex-col gap-4 text-lg font-semibold">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./category.html">On Sale</a></li>
+            <li><a href="./shop.html">New Arrivals</a></li>
+            <li><a href="./index.html">Brands</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a
+            href="./cart.html"
+            class="bg-black text-white text-center py-3 rounded-full font-medium"
+            >View Cart</a
+          >
+          <button
+            class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
+          >
+            Account
+          </button>
         </div>
       </div>
-    </nav>
-    <section class="mx-auto max-w-7xl px-4 py-6 md:px-8">
-      <hr>
-      <!--   -->
-      <div
-        class="mb-6 flex items-center gap-2 text-xs text-gray-400 md:text-sm mt-15 md:mt-30"
-      >
-        <a href="./index.html">Home</a>
-        <span>›</span>
-        <a href="./category.html">Shop</a>
-        <span>›</span>
-        <a href="">Men</a>
-        <span>›</span>
-        <span>T-shirts</span>
-      </div>
+    </div>
+    <!-- BREADCRUMB NAVIGATION -->
+    <div
+      class="max-w-7xl mx-auto px-4 lg:px-16 py-4 text-xs text-gray-500 flex items-center mt-25 gap-2"
+    >
+      <a href="./index.html" class="hover:text-black">Home</a>
+      <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      <a href="#" class="hover:text-black">Shop</a>
+      <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      <a href="#" class="hover:text-black">Men</a>
+      <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      <span class="text-black font-semibold">T-shirts</span>
+    </div>
 
-      <!-- PRODUCT -->
-      <div class="grid grid-cols-1 gap-2 md:gap-0 md:grid-cols-2">
-        <!--  IMAGES  -->
-        <div class="flex flex-col-reverse md:flex md:flex-row gap-4 md:gap-0">
-          <!-- THUMBNAILS -->
-          <div
-            class="grid grid-cols-3 gap-3 md:flex md:flex-col md:w-50 md:gap-10"
-          >
+    <!-- MAIN PRODUCT SECTION -->
+    <main class="max-w-7xl mx-auto px-4 lg:px-16 py-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- PRODUCT GALLERY -->
+        <div class="flex flex-col-reverse sm:flex-row gap-4">
+          <!-- Thumbnails -->
+          <div class="flex sm:flex-col gap-3 justify-between">
             <button
-              onclick="changeImage('./asset/image 1 (1).png')"
-              class="h-28 md:h-40  rounded-2xl border-2 md:w-40"
+              onclick="changeImage(this, './asset/image 1 (1).png')"
+              class="thumbnail-btn w-30 h-30 md:w-30 md:h-34 bg-[#F0EEED] rounded-2xl overflow-hidden border-2 border-black flex items-center justify-center p-2 focus:outline-none"
             >
               <img
                 src="./asset/image 1 (1).png"
-                alt="Product"
-                class="h-full w-full object-contain"
+                alt="Thumbnail 1"
+                class="w-full h-full object-contain"
               />
             </button>
-
             <button
-              onclick="changeImage('./asset/image 5 (1).png')"
-              class="h-28 overflow-hidden rounded-2xl md:h-40 md:w-40"
+              onclick="changeImage(this, './asset/image 5 (1).png')"
+              class="thumbnail-btn w-30 h-30 md:w-30 md:h-34 bg-[#F0EEED] rounded-2xl overflow-hidden border-2 border-transparent flex items-center justify-center p-2 focus:outline-none"
             >
               <img
                 src="./asset/image 5 (1).png"
-                alt="Product"
-                class="h-full w-full object-contain"
+                alt="Thumbnail 2"
+                class="w-full h-96 object-contain"
               />
             </button>
-
             <button
-              onclick="changeImage('./asset/image 6 (1).png')"
-              class="h-28 overflow-hidden rounded-2xl md:h-40 md:w-40"
+              onclick="changeImage(this, './asset/image 6 (1).png')"
+              class="thumbnail-btn w-30 h-30 md:w-30 md:h-34 bg-[#F0EEED] rounded-2xl overflow-hidden border-2 border-transparent flex items-center justify-center p-2 focus:outline-none"
             >
               <img
                 src="./asset/image 6 (1).png"
-                alt="Product"
-                class="h-full w-full object-cover"
+                alt="Thumbnail 3"
+                class="w-full h-full object-contain"
               />
             </button>
           </div>
-          <!-- MAIN IMAGE -->
-          <div class="flex h-[400px] md:mt-8 items-center justify-center">
+
+          <!-- Main Product Display Image -->
+          <div
+            class="flex-1 bg-[#F0EEED] rounded-2xl overflow-hidden aspect-square flex items-center justify-center p-6"
+          >
             <img
               id="mainImage"
               src="./asset/image 1 (1).png"
               alt="One Life Graphic T-Shirt"
-              class="h-full w-full object-contain"
+              class="w-full h-full object-contain"
             />
           </div>
         </div>
 
-        <!-- PRODUCT INFORMATION  -->
-        <div>
-          <!-- TITLE -->
-          <h1
-            class="text-3xl font-extrabold uppercase leading-tight text-[#1f2937] md:text-5xl"
-          >
-            One Life Graphic T-Shirt
-          </h1>
-
-          <!-- RATING -->
-          <div class="mt-3 flex items-center gap-2">
-            <div class="text-xl tracking-wide text-yellow-400">
-              <img src="./asset/Frame 10 (5).png" alt="" class="h-4" />
-            </div>
-
-            <span class="text-sm text-gray-500"> 4.5/5 </span>
-          </div>
-
-          <!-- PRICE -->
-          <div class="mt-4 flex items-center gap-3">
-            <span class="text-2xl font-bold md:text-3xl"> $260 </span>
-
-            <span class="text-2xl text-gray-400 line-through md:text-3xl">
-              $300
-            </span>
-
-            <span
-              class="rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-400"
+        <!-- PRODUCT DETAILS -->
+        <div class="flex flex-col justify-between">
+          <div>
+            <h1
+              class="text-2xl sm:text-4xl font-black uppercase tracking-tight mb-2"
             >
-              -40%
-            </span>
-          </div>
+              One Life Graphic T-Shirt
+            </h1>
 
-          <!-- DESCRIPTION -->
-          <p class="mt-4 text-sm leading-6 text-gray-500 md:text-base">
-            This graphic t-shirt which is perfect for any occasion. Crafted from
-            a soft and breathable fabric, it offers superior comfort and style.
-          </p>
-
-          <hr class="my-5 border-gray-200" />
-
-          <!-- COLORS -->
-          <div>
-            <h3 class="mb-3 text-sm text-gray-500">Select Colors</h3>
-
-            <div class="flex gap-4">
-              <button
-                onclick="selectColor(this)"
-                class="color flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#1f2937] bg-[#555]"
+            <!-- Ratings -->
+            <div class="flex items-center gap-3 mb-3">
+              <img src="./asset/Frame 10 (5).png" alt="" class="h-4">
+              <span class="text-xs font-semibold text-gray-600"
+                >4.5/<span class="text-gray-400">5</span></span
               >
-                <span class="text-white">✓</span>
-              </button>
+            </div>
 
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-[#314F4A]"
-              ></button>
+            <!-- Price & Discounts -->
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl sm:text-3xl font-bold">$260</span>
+              <span
+                class="text-2xl sm:text-3xl font-bold text-gray-300 line-through"
+                >$300</span
+              >
+              <span
+                class="bg-red-100 text-red-500 text-xs font-semibold px-2.5 py-1 rounded-full"
+                >-40%</span
+              >
+            </div>
 
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-[#31344F]"
-              ></button>
+            <!-- Description -->
+            <p
+              class="text-xs sm:text-sm text-gray-500 pb-6 border-b border-gray-200 leading-relaxed"
+            >
+              This graphic t-shirt is perfect for any occasion. Crafted from
+              lightweight, breathable cotton fabric, offering a comfortable fit
+              and superior style for daily wear.
+            </p>
+
+            <!-- Color Selector -->
+            <div class="py-4 border-b border-gray-200">
+              <p class="text-xs text-gray-500 font-medium mb-3">
+                Select Colors
+              </p>
+              <div class="flex gap-3">
+                <button
+                  onclick="selectColor(this, 'Olive')"
+                  class="color-btn w-9 h-9 rounded-full bg-[#4F4E33] text-white flex items-center justify-center text-xs font-bold ring-2 ring-offset-2 ring-black focus:outline-none"
+                >
+                  ✓
+                </button>
+                <button
+                  onclick="selectColor(this, 'Forest')"
+                  class="color-btn w-9 h-9 rounded-full bg-[#314F4A] text-white flex items-center justify-center text-xs font-bold focus:outline-none"
+                ></button>
+                <button
+                  onclick="selectColor(this, 'Navy')"
+                  class="color-btn w-9 h-9 rounded-full bg-[#31344F] text-white flex items-center justify-center text-xs font-bold focus:outline-none"
+                ></button>
+              </div>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="py-4 border-b border-gray-200">
+              <p class="text-xs text-gray-500 font-medium mb-3">Choose Size</p>
+              <div class="flex flex-wrap gap-2">
+                <button
+                  onclick="selectSize(this)"
+                  class="size-btn px-5 py-2.5 rounded-full text-xs font-medium bg-[#F0F0F0] text-gray-600 focus:outline-none"
+                >
+                  Small
+                </button>
+                <button
+                  onclick="selectSize(this)"
+                  class="size-btn px-5 py-2.5 rounded-full text-xs font-medium bg-[#F0F0F0] text-gray-600 focus:outline-none"
+                >
+                  Medium
+                </button>
+                <button
+                  onclick="selectSize(this)"
+                  class="size-btn px-5 py-2.5 rounded-full text-xs font-medium bg-black text-white focus:outline-none"
+                >
+                  Large
+                </button>
+                <button
+                  onclick="selectSize(this)"
+                  class="size-btn px-5 py-2.5 rounded-full text-xs font-medium bg-[#F0F0F0] text-gray-600 focus:outline-none"
+                >
+                  X-Large
+                </button>
+              </div>
             </div>
           </div>
 
-          <hr class="my-5 border-gray-200" />
-
-          <!-- SIZE -->
-          <div>
-            <h3 class="mb-3 text-sm text-gray-500">Choose Size</h3>
-
-            <div class="flex gap-2">
-              <button
-                onclick="selectSize(this)"
-                class="size rounded-full bg-gray-100 px-5 py-3 text-xs text-gray-500"
-              >
-                Small
-              </button>
-
-              <button
-                onclick="selectSize(this)"
-                class="size rounded-full bg-gray-100 px-5 py-3 text-xs text-gray-500"
-              >
-                Medium
-              </button>
-
-              <button
-                onclick="selectSize(this)"
-                class="size rounded-full bg-[#000000] px-6 py-3 text-xs text-white"
-              >
-                Large
-              </button>
-
-              <button
-                onclick="selectSize(this)"
-                class="size rounded-full bg-gray-100 px-5 py-3 text-xs text-gray-500"
-              >
-                X-Large
-              </button>
-            </div>
-          </div>
-
-          <!-- QUANTITY + CART -->
-          <div class="mt-7 flex gap-3">
+          <!-- Quantity Counter & Add to Cart Action -->
+          <div class="pt-6 flex gap-4 items-center">
+            <!-- Quantity Controls -->
             <div
-              class="flex h-14 w-28 items-center justify-between rounded-full bg-gray-100 px-4"
+              class="bg-[#F0F0F0] rounded-full px-4 py-3 flex items-center gap-5 text-sm font-bold"
             >
-              <button onclick="decreaseQuantity()" class="text-xl">−</button>
-
+              <button
+                onclick="decreaseQuantity()"
+                class="text-gray-500 hover:text-black cursor-pointer px-1"
+              >
+                -
+              </button>
               <span id="quantity">1</span>
-
-              <button onclick="increaseQuantity()" class="text-xl">+</button>
+              <button
+                onclick="increaseQuantity()"
+                class="text-gray-500 hover:text-black cursor-pointer px-1"
+              >
+                +
+              </button>
             </div>
 
+            <!-- Main Product Add To Cart Button -->
             <button
-              class="h-14 flex-1 rounded-full bg-[#000000] text-sm font-semibold text-white"
+              id="add-to-cart-btn"
+              class="flex-1 bg-black text-white py-3.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-gray-800 transition cursor-pointer text-center"
             >
               Add to Cart
             </button>
@@ -282,370 +306,394 @@
         </div>
       </div>
 
-      <!---- TABS ---->
-      <div class="mt-12">
-        <div class="grid grid-cols-3 border-b border-gray-200">
+      <!-- TABS SECTION -->
+      <section class="mt-16">
+        <!-- Tab Controls -->
+        <div class="flex border-b border-gray-200 text-center">
           <button
-            onclick="showTab('details', this)"
-            class="tab border-b-2 border-[#1f2937] py-4 text-xs font-semibold text-[#1f2937] md:text-sm"
+            onclick="showTab('tab-details', this)"
+            class="tab-btn flex-1 py-4 text-xs sm:text-base text-gray-400 font-medium focus:outline-none"
           >
             Product Details
           </button>
-
           <button
-            onclick="showTab('reviews', this)"
-            class="tab py-4 text-xs text-gray-400 md:text-sm"
+            onclick="showTab('tab-reviews', this)"
+            class="tab-btn flex-1 py-4 text-xs sm:text-base border-b-2 border-black text-black font-semibold focus:outline-none"
           >
             Rating & Reviews
           </button>
-
           <button
-            onclick="showTab('faq', this)"
-            class="tab py-4 text-xs text-gray-400 md:text-sm"
+            onclick="showTab('tab-faqs', this)"
+            class="tab-btn flex-1 py-4 text-xs sm:text-base text-gray-400 font-medium focus:outline-none"
           >
             FAQs
           </button>
         </div>
 
-        <!-- REVIEWS -->
-        <div id="reviews" class="tabContent py-6">
-          <div class="flex items-center justify-between">
-            <h2 class="text-lg font-bold">
+        <!-- Tab Content: Details -->
+        <div
+          id="tab-details"
+          class="tabContent hidden py-8 text-xs sm:text-sm text-gray-600 leading-relaxed"
+        >
+          <p class="mb-2">
+            <strong>Fabric Composition:</strong> 100% Premium Combed Cotton
+          </p>
+          <p class="mb-2"><strong>Fit:</strong> Relaxed Modern Fit</p>
+          <p>
+            <strong>Care Instructions:</strong> Machine wash cold with like
+            colors, tumble dry low, do not iron over print.
+          </p>
+        </div>
+
+        <!-- Tab Content: Reviews -->
+        <div id="tab-reviews" class="tabContent py-8">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-base sm:text-xl font-bold">
               All Reviews
-              <span class="text-xs font-normal text-gray-400"> (451) </span>
+              <span class="text-xs font-normal text-gray-400">(451)</span>
             </h2>
-
-            <div class="flex gap-2">
-              <button
-                class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100"
+            <button
+              class="bg-black text-white text-xs px-4 py-2.5 rounded-full font-semibold hover:bg-gray-800 transition"
+            >
+              Write a Review
+            </button>
+          </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              class="border rounded-2xl border-gray-200 p-6 flex flex-col justify-between"
+            >
+              <div>
+                <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="font-bold text-base">Samantha D.</h3>
+                  <span
+                    class="w-4 h-4 bg-green-500 text-white rounded-full text-[10px] flex items-center justify-center font-bold"
+                    >✓</span
+                  >
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  "I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I
+                  appreciate the attention to detail. It's become my favorite
+                  go-to shirt."
+                </p>
+              </div>
+              <span class="text-xs text-gray-400"
+                >Posted on August 14, 2026</span
               >
-                <img src="./asset/Frame (4).png" alt="" />
-              </button>
+            </div>
 
-              <button
-                class="hidden rounded-full bg-gray-100 px-5 text-xs md:block"
+            <div
+              class="border rounded-2xl border-gray-200 p-6 flex flex-col justify-between"
+            >
+              <div>
+                <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="font-bold text-base">Alex M.</h3>
+                  <span
+                    class="w-4 h-4 bg-green-500 text-white rounded-full text-[10px] flex items-center justify-center font-bold"
+                    >✓</span
+                  >
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  "The t-shirt exceeded my expectations! The colors are vibrant
+                  and the print quality is top-notch. It fits perfectly and
+                  hasn't faded after multiple washes. Highly recommend!"
+                </p>
+              </div>
+              <span class="text-xs text-gray-400"
+                >Posted on August 15, 2026</span
               >
-                Latest⌄
-              </button>
+            </div>
 
-              <button class="rounded-full bg-[#000000] px-5 text-xs text-white">
-                Write a Review
-              </button>
+            <div
+              class="border rounded-2xl border-gray-200 p-6 flex flex-col justify-between"
+            >
+              <div>
+                <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="font-bold text-base">Ethan R.</h3>
+                  <span
+                    class="w-4 h-4 bg-green-500 text-white rounded-full text-[10px] flex items-center justify-center font-bold"
+                    >✓</span
+                  >
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  "This t-shirt is a must-have for anyone who appreciates good
+                  design. The minimalist yet stylish pattern caught my eye
+                  immediately, and the fit is spot on."
+                </p>
+              </div>
+              <span class="text-xs text-gray-400"
+                >Posted on August 16, 2026</span
+              >
+            </div>
+
+            <div
+              class="border rounded-2xl border-gray-200 p-6 flex flex-col justify-between"
+            >
+              <div>
+                <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="font-bold text-base">Olivia P.</h3>
+                  <span
+                    class="w-4 h-4 bg-green-500 text-white rounded-full text-[10px] flex items-center justify-center font-bold"
+                    >✓</span
+                  >
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  "As a fan of simple yet expressive clothes, this shirt was a
+                  slam dunk. The fabric is soft, durable, and super comfortable
+                  for all-day wear."
+                </p>
+              </div>
+              <span class="text-xs text-gray-400"
+                >Posted on August 17, 2026</span
+              >
+            </div>
+
+            <div
+              class="border rounded-2xl border-gray-200 p-6 flex flex-col justify-between"
+            >
+              <div>
+                <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="font-bold text-base">Liam K.</h3>
+                  <span
+                    class="w-4 h-4 bg-green-500 text-white rounded-full text-[10px] flex items-center justify-center font-bold"
+                    >✓</span
+                  >
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  "This t-shirt is a staple in my wardrobe now. The quality is
+                  evident in every stitch, and I love how versatile it is with
+                  almost any outfit."
+                </p>
+              </div>
+              <span class="text-xs text-gray-400"
+                >Posted on August 18, 2026</span
+              >
+            </div>
+
+            <div
+              class="border rounded-2xl border-gray-200 p-6 flex flex-col justify-between"
+            >
+              <div>
+                <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="font-bold text-base">Ava H.</h3>
+                  <span
+                    class="w-4 h-4 bg-green-500 text-white rounded-full text-[10px] flex items-center justify-center font-bold"
+                    >✓</span
+                  >
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                  "I'm impressed by the quality and craftsmanship. It retains
+                  its shape after washing and stays feeling brand new."
+                </p>
+              </div>
+              <span class="text-xs text-gray-400"
+                >Posted on August 19, 2026</span
+              >
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <button
+              class="rounded-full border border-gray-200 px-9 py-3 text-sm font-medium text-black hover:bg-gray-100 transition cursor-pointer"
+            >
+              Load More Reviews
+            </button>
+          </div>
+        </div>
+        </div>
+
+        <!-- Tab Content: FAQs -->
+        <div
+          id="tab-faqs"
+          class="tabContent hidden py-8 text-xs sm:text-sm text-gray-600 leading-relaxed"
+        >
+          <p class="mb-4">
+            <strong>Q: How long does shipping take?</strong><br />A: Standard
+            domestic shipping takes 3 to 5 business days.
+          </p>
+          <p>
+            <strong>Q: What is your return policy?</strong><br />A: You can
+            return any unwashed, unworn item within 30 days of delivery.
+          </p>
+        </div>
+      </section>
+
+      <!-- YOU MIGHT ALSO LIKE (Dynamic Related Products) -->
+      <section class="my-16">
+        <h2
+          class="text-2xl sm:text-4xl font-black text-center uppercase tracking-tight mb-8"
+        >
+          You Might Also Like
+        </h2>
+        <div
+          id="related-products"
+          class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+        >
+          <!-- Rendered dynamically via shop.js -->
+        </div>
+      </section>
+    </main>
+ <!-- Newsletter -->
+    <section class="max-w-7xl mx-auto px-4 -mb-16 relative z-10">
+      <div
+        class="bg-black text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <h2 class="text-3xl md:text-4xl font-black max-w-md">
+          STAY UP TO DATE ABOUT OUR LATEST OFFERS
+        </h2>
+        <form class="w-full md:w-auto flex flex-col gap-3 min-w-[300px]">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            class="bg-white text-black px-5 py-3 rounded-full outline-none text-sm"
+          />
+          <button
+            class="bg-white text-black font-semibold py-3 rounded-full hover:bg-gray-200 transition text-sm"
+          >
+            Subscribe to Newsletter
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-[#F0F0F0] pt-24 pb-12 px- md:px-16 border-t border-gray-200"
+    >
+      <section class="bg-[#F0F0F0]">
+        <div
+          class="md:flex md:flex-row flex flex-col md:gap-28 gap-15 p-5 md:p-15"
+        >
+          <div class="">
+            <img src="./asset/image/SHOP.CO.png" alt="" />
+
+            <p class="mt-4 w-80 mb-9">
+              We have clothes that suits your style and which you’re proud to
+              wear. From women to men.
+            </p>
+
+            <div class="flex gap-3 md:mt-8 mt-4">
+              <a href="https://x.com">
+                <img src="./asset/1.png" alt="" />
+              </a>
+
+              <a href="https://www.facebook.com">
+                <img src="./asset/2.png" alt="" />
+              </a>
+
+              <a href="https://www.instagram.com/?hl=en">
+                <img src="./asset/3.png" alt="" />
+              </a>
+
+              <a href="https://github.com/adegbolaadeyemi">
+                <img src="./asset/4.png" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <div class="flex gap-20 md:gap-25">
+            <!-- COMPANY -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">COMPANY</h1>
+
+              <a href="">About</a>
+
+              <a href="">Features</a>
+
+              <a href="">Work</a>
+
+              <a href="">Career</a>
+            </div>
+
+            <!-- HELP -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">HELP</h1>
+
+              <a href="">Customer Support</a>
+
+              <a href="">Delivery Details</a>
+
+              <a href="">Terms & Condition</a>
+
+              <a href="">Privacy Policy</a>
+            </div>
+          </div>
+
+          <div class="flex gap-15 md:gap-20">
+            <!-- FAQ  -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">FAQ</h1>
+
+              <a href="">Account</a>
+
+              <a href="">Manage Deliveries</a>
+
+              <a href="">Orders</a>
+
+              <a href="">Payments</a>
+            </div>
+
+            <!-- RESOURCES -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">RESOURCES</h1>
+
+              <a href="">Free eBooks</a>
+
+              <a href="">Development Tutorial</a>
+
+              <a href="">How to - Blog</a>
+
+              <a href="">Youtube Playlist</a>
             </div>
           </div>
         </div>
 
-        <!-- DETAILS -->
-        <div id="details" class="tabContent hidden py-6">
-          <h2 class="text-xl font-bold">Product Details</h2>
+        <hr class="mt-5" />
 
-          <p class="mt-3 text-sm leading-6 text-gray-500">
-            Premium graphic t-shirt made from soft and breathable fabric.
-          </p>
-        </div>
+        <div
+          class="flex flex-col md:flex md:flex-row gap-4 mb-0 md:justify-between p-8 md:p-12"
+        >
+          <h3 class="font-light text-lg">
+            Shop.co © 2000-2023, All Rights Reserved
+          </h3>
 
-        <!-- FAQ -->
-        <div id="faq" class="tabContent hidden py-6">
-          <h2 class="text-xl font-bold">Frequently Asked Questions</h2>
+          <div class="flex">
+            <a href="https://www.visa.com/en-us/personal/cards">
+              <img src="./asset/Badge.png" alt="" />
+            </a>
 
-          <div class="mt-4 space-y-3">
-            <details class="rounded-xl border p-4">
-              <summary class="cursor-pointer text-sm font-medium">
-                What sizes are available?
-              </summary>
+            <a href="https://www.mastercard.com/mea/en.html">
+              <img src="./asset/Badge (1).png" alt="" />
+            </a>
 
-              <p class="mt-3 text-sm text-gray-500">
-                Small, Medium, Large and X-Large.
-              </p>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="md:flex md:flex-row flex flex-col mb-5 md:gap-0 gap-5 md:mb-8">
-        <div
-          class="border rounded-2xl border-gray-200 w-90 md:w-2xl md:p-8 p-3 md:mx-15 mx-5"
-        >
-          <!-- Rating -->
-          <div class="flex justify-between items-center mb-3">
-            <img src="./asset/Frame 10 (5).png" alt="" class="h-5" /><span
-              class="text-black font-bold text-2xl"
-              >...</span
-            >
-          </div>
-          <!-- CARD 1 -->
-          <div class="flex gap-2 items-center ">
-            <h3 class="text-lg font-semibold">Samantha D.</h3>
-            <span
-              class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white"
-            >
-              ✓</span
-            >
-          </div>
-          <h3 class="mb-4 mt-3 text-gray-500">
-            "I absolutely love this t-shirt! The design is unique and the fabric
-            feels so comfortable. As a fellow designer, I appreciate the
-            attention to detail. It's become my favorite go-to shirt."
-          </h3>
-          <p class="text-gray-500 text-sm">Posted on August 14, 2026</p>
-        </div>
-        <!-- CARD 2 -->
-        <div
-          class="border rounded-2xl border-gray-200 md:w-2xl w-90 mx-5 md:p-8 p-3 md:mx-0"
-        >
-          <!-- Rating -->
-          <div class="flex justify-between items-center mb-3">
-            <img src="./asset/Frame 10 (6).png" alt="" class="h-5" /><span
-              class="text-black font-bold text-2xl"
-              >...</span
-            >
-          </div>
-          <div class="flex gap-2 items-center">
-            <h3 class="text-lg font-semibold">Alex M.</h3>
-            <span
-              class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white"
-            >
-              ✓</span
-            >
-          </div>
-          <h3 class="mb-4 mt-3 text-gray-500">
-            "The t-shirt exceeded my expectations! The colors are vibrant and
-            the print quality is top-notch. Being a UI/UX designer myself, I'm
-            quite picky about aesthetics, and this t-shirt definitely gets a
-            thumbs up from me."
-          </h3>
-          <p class="text-gray-500 text-sm">Posted on August 15, 2026</p>
-        </div>
-      </div>
-      <!-- CARD 3 -->
-      <div class="md:flex mb-5 md:flex-row flex flex-col md:gap-0 gap-5 md:mb-8">
-        <div
-          class="border rounded-2xl border-gray-200 w-90 md:w-2xl md:p-8 p-3 md:mx-15 mx-5"
-        >
-          <!-- Rating -->
-          <div class="flex justify-between items-center mb-3">
-            <img src="./asset/Frame 10 (7).png" alt="" class="h-5" /><span
-              class="text-black font-bold text-2xl"
-              >...</span
-            >
-          </div>
-          <div class="flex gap-2 items-center">
-            <h3 class="text-lg font-semibold">Ethan R.</h3>
-            <span
-              class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white"
-            >
-              ✓</span
-            >
-          </div>
-          <h3 class="mb-4 mt-3 text-gray-500">
-            "This t-shirt is a must-have for anyone who appreciates good design.
-            The minimalistic yet stylish pattern caught my eye, and the fit is
-            perfect. I can see the designer's touch in every aspect of this
-            shirt."
-          </h3>
-          <p class="text-gray-500 text-sm">Posted on August 16, 2026</p>
-        </div>
-        <!-- CARD 4 -->
-        <div
-          class="border rounded-2xl border-gray-200 md:w-2xl w-90 mx-5 md:p-8 p-3 md:mx-0"
-        >
-          <!-- Rating -->
-          <div class="flex justify-between items-center mb-3">
-            <img src="./asset/Frame 10 (6).png" alt="" class="h-5" /><span
-              class="text-black font-bold text-2xl"
-              >...</span
-            >
-          </div>
-          <div class="flex gap-2 items-center">
-            <h3 class="text-lg font-semibold">Olivia P.</h3>
-            <span
-              class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white"
-            >
-              ✓</span
-            >
-          </div>
-          <h3 class="mb-4 mt-3 text-gray-500 text-sm">
-            "As a UI/UX enthusiast, I value simplicity and functionality. This
-            t-shirt not only represents those principles but also feels great to
-            wear. It's evident that the designer poured their creativity into
-            making this t-shirt stand out."
-          </h3>
-          <p class="text-gray-500 text-sm">Posted on August 17, 2026</p>
-        </div>
-      </div>
-      <!-- CARD 5 -->
-      <div class="md:flex md:flex-row flex flex-col md:gap-0 gap-5">
-        <div
-          class="border rounded-2xl border-gray-200 w-90 md:w-2xl md:p-8 p-3 md:mx-15 mx-5"
-        >
-          <!-- Rating -->
-          <div class="flex justify-between items-center mb-3">
-            <img src="./asset/Frame 10 (6).png" alt="" class="h-5" /><span
-              class="text-black font-bold text-2xl"
-              >...</span
-            >
-          </div>
-          <div class="flex gap-2 items-center">
-            <!-- NAME -->
-            <h3 class="text-lg font-semibold">Liam K.</h3>
-            <span
-              class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white"
-            >
-              ✓</span
-            >
-          </div>
-          <h3 class="mb-4 mt-3 text-gray-500">
-            "This t-shirt is a fusion of comfort and creativity. The fabric is
-            soft, and the design speaks volumes about the designer's skill. It's
-            like wearing a piece of art that reflects my passion for both design
-            and fashion."
-          </h3>
-          <p class="text-gray-500 text-sm">Posted on August 18, 2026</p>
-        </div>
-        <!-- CARD 6 -->
-        <div
-          class="border rounded-2xl border-gray-200 md:w-2xl w-90 mx-5 md:p-8 p-3 md:mx-0"
-        >
-          <!-- Rating -->
-          <div class="flex justify-between items-center mb-3">
-            <img src="./asset/Frame 10 (5).png" alt="" class="h-5" /><span
-              class="text-black font-bold text-2xl"
-              >...</span
-            >
-          </div>
-          <div class="flex gap-2 items-center">
-            <h3 class="text-lg font-semibold">Ava H.</h3>
-            <span
-              class="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-xs text-white"
-            >
-              ✓</span
-            >
-          </div>
-          <h3 class="mb-4 mt-3 text-gray-500">
-            "I'm not just wearing a t-shirt; I'm wearing a piece of design
-            philosophy. The intricate details and thoughtful layout of the
-            design make this shirt a conversation starter."
-          </h3>
-          <p class="text-gray-500 text-sm">Posted on August 19, 2026</p>
-        </div>
-      </div>
-    </section>
-    <!-- LOAD MORE BTN -->
-    <div class="text-center mt-10 mb-10">
-      <button
-        class="bg-white border border-gray-100 hover:bg-black hover:text-white md:hover:bg-black md:hover:text-white rounded-3xl md:w-50 w-85 p-3"
-      >
-        Load More Reviews
-      </button>
-    </div>
-      <!-- YOU MIGHT ALSO LIKE -->
+            <a href="https://www.paypal.com/ng/home">
+              <img src="./asset/Badge (2).png" alt="" />
+            </a>
 
-      <h1 class="md:text-6xl text-3xl mt-25 font-extrabold text-center">
-        YOU MIGHT ALSO LIKE
-      </h1>
-      <div id="new-arrivals" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 lg:grid-cols-4 lg:gap-6 md:p-20 p-5"></div>
-    </div>
-    <section class="px-4 py-10 md:px-8">
- <div class="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#000000] rounded-3xl px-6 py-8 md:px-10 md:py-9 lg:px-12">
-  <div class="w-full ">
-  <h2 class="max-w-[360px] text-3xl font-extrabold  md:max-w-none md:text-5xl text-white">
-      STAY UPTO DATE ABOUT <br> OUR LATEST OFFERS
-    </h2></div>
-    <form class=" w-full flex flex-col gap-4 md:w-[42%]">
-      <!-- EMAIL INPUT -->
-     <div class="flex gap-3 rounded-full items-center bg-white h-14 md:w-96 px-5">
-         <!-- Email Icon -->
-      <img src="./asset/Frame (3).png" alt="">
-     <input type="text" placeholder="Enter your email address" class="w-full bg-transparent text-black outline-none ">
-     </div>
+            <a href="https://www.apple.com/apple-pay/">
+              <img src="./asset/Badge (3).png" alt="" />
+            </a>
 
-     <!-- Subscribe btn -->
-      <button class="h-14 rounded-full bg-white px-6 md:w-96 font-medium transition hover:bg-gray-300 text-gray-800">
-        Subscribe to Newsletter
-      </button>
-    </form>
-   </div>
-</section>
-<section class="bg-[#F0F0F0] ">
-<div class="md:flex md:flex-row flex flex-col md:gap-35 gap-15 p-5 md:p-15" >
-  <div class="">
-    <img src="./asset/image/SHOP.CO.png" alt="">
-    <p class="mt-4 w-80">We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
-   <div class="flex gap-3 md:mt-8 mt-4">
-    <a href="https://x.com">
-    <img src="./asset/1.png" alt="">
-  </a>
-    <a href="https://www.facebook.com">
-      <img src="./asset/2.png" alt="">
-      </a>
-      <a href="https://www.instagram.com/?hl=en">
-    <img src="./asset/3.png" alt="">
-    </a>
-    <a href="https://github.com/adegbolaadeyemi">
-    <img src="./asset/4.png" alt="">
-    </a>
-    </div>
-  </div>
-  <div class="flex gap-20 md:gap-30">
-    <!-- COMPANY -->
-     <div  class="flex-col flex gap-4">
-      <h1 class="font-light text-2xl text-black">COMPANY</h1>
-      <a href="">About</a>
-      <a href="">Features</a>
-      <a href="">Work</a>
-      <a href="">Career</a>
-     </div>
-       <!-- HELP -->
-      <div class="flex-col flex gap-4">
-        <h1 class="font-light text-2xl text-black">HELP</h1>
-        <a href="">Customer Support</a>
-        <a href="">Delivery Details</a>
-        <a href="">Terms & Condition</a>
-        <a href="">Privacy Policy</a>
-      </div> 
-      </div>
-      <div class="flex gap-15 md:gap-30">
-         <!-- FAQ  -->
-       <div class="flex-col flex gap-4">
-        <h1 class="font-light text-2xl text-black">FAQ</h1>
-        <a href="">Account</a>
-        <a href="">Manage Deliveries</a>
-        <a href="">Orders</a>
-        <a href="">Payments</a>
-      </div> 
-         <!-- RESOURCES -->
-      <div class="flex-col flex gap-4">
-        <h1 class="font-light text-2xl text-black">RESOURCES</h1>
-        <a href="">Free eBooks</a>
-        <a href="">Development Tutorial</a>
-        <a href="">How to - Blog</a>
-        <a href="">Youtube Playlist</a>
-      </div>   
-     </div>
-    </div>
-    <hr class=" mt-5">
-    <div class="flex flex-col md:flex md:flex-row gap-4 mb-0 md:justify-between p-8 md:p-12">
-      <h3 class="font-light text-lg">Shop.co © 2000-2023, All Rights Reserved</h3>
-      <div class="flex">
-        <a href="https://www.visa.com/en-us/personal/cards">
-        <img src="./asset/Badge.png" alt="">
-        </a>
-        <a href="https://www.mastercard.com/mea/en.html">
-        <img src="./asset/Badge (1).png" alt="">
-        </a>
-        <a href="https://www.paypal.com/ng/home">
-        <img src="./asset/Badge (2).png" alt="">
-        </a>
-        <a href="https://www.apple.com/apple-pay/">
-        <img src="./asset/Badge (3).png" alt="">
-        </a>
-        <a href="https://pay.google.com">
-        <img src="./asset/Badge (4).png" alt="">
-        </a>
-      </div>
-    </div>
-  </section> 
-    <script src="shop.js"></script>
+            <a href="https://pay.google.com">
+              <img src="./asset/Badge (4).png" alt="" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+        <!-- JAVASCRIPT FILES (Load cart.js first, then shop.js) -->
+    <script src="./cart.js"></script>
+    <script src="./shop.js"></script>
   </body>
 </html>

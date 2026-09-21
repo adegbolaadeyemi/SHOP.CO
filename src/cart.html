@@ -1,66 +1,95 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
-    <title class="text-black">Shop.Co</title>
+    <title>Shop.Co - Cart</title>
     <link rel="icon" href="./asset/image/Frame.png" />
-    <link rel="stylesheet" href="./index.html" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
-  <body>
-    <!-- PRODUCT SECTION -->
-    <!------ PROMO NAV ------->
+  <body class="bg-white font-sans text-black">
+    <!-- PROMO BANNER -->
     <marquee
-      behavior=""
+      behavior="scroll"
       direction="right"
-      speed="12"
-      bg="black"
-      class="bg-black text-white z-50 top-0 fixed"
+      scrollamount="8"
+      class="bg-black text-white z-50 top-0 fixed py-1.5 text-xs sm:text-sm font-medium"
     >
       Sign up and get 20% off to your first order.
-      <a href="" class="text-white underline">Sign Up Now</a>
+      <a href="#" class="text-white underline font-semibold ml-1"
+        >Sign Up Now</a
+      >
     </marquee>
-    <!-- NAV BAR -->
+
+    <!-- NAVBAR -->
     <nav
-      class="text-black py-3 md:px-10 px-5 flex md:p-10 justify-evenly fixed top-6 left-0 w-full z-50 bg-white"
+      class="text-black py-4 md:px-10 px-5 flex justify-between items-center fixed top-7 left-0 w-full z-40 bg-white border-b border-gray-100"
     >
-      <img
-        src="./asset/image/Frame (2).png"
-        alt=""
-        class="md:hidden block"
-        id="menu-icon"
-      />
-      <img src="./asset/image/SHOP.CO.png" alt="" />
-      <ul class="gap-10 items-center hidden md:flex">
-        <a href="./shop.html">Shop</a>
-        <a href="./category.html">On Sale</a>
-        <a href="./index.html">New Arrivals</a>
-        <a href="./index.html">Brands</a>
-      </ul>
-      <div class="bg-[#F0F0F0] rounded-2xl flex px-2 py-1 items-center">
-        <img src="./asset/image/Vector.png" alt="" class="w-4 h-4" />
-        <input
-          type="text"
-          placeholder="Search for product"
-          class="outline-none hidden md:block w-96 p-1"
+      <div class="flex items-center gap-4">
+        <img
+          src="./asset/image/Frame (2).png"
+          alt="Menu"
+          class="md:hidden block cursor-pointer"
+          id="menu-icon"
         />
-      </div>
-      <div class="flex md:gap-10 gap-5 items-center">
-        <a href="./cart.html"><img src="./asset/image/Frame.png" alt="" /></a>
-        <a href=""><img src="./asset/image/Frame (1).png" alt="" /></a>
-      </div>
-    </nav>
-    <!-- mobile nav-bar -->
-    <nav
-      id="mobile-nav"
-      class="bg-gray-300 px-4 py-6 w-[85%] bottom-0 md:hidden hidden flex-col justify-between fixed top-0 left-0 z-999"
-    >
-      <div>
-        <img class="text-white" src="./asset/image/SHOP.CO.png" alt="" />
+        <a href="./index.html">
+          <img
+            src="./asset/image/SHOP.CO.png"
+            alt="SHOP.CO"
+            class="h-5 md:h-6"
+          />
+        </a>
       </div>
 
-      <ul class="flex flex-col gap-6">
+      <ul class="gap-10 items-center hidden md:flex font-medium text-sm">
+        <li><a href="./shop.html" class="hover:text-gray-600">Shop</a></li>
+        <li>
+          <a href="./category.html" class="hover:text-gray-600">On Sale</a>
+        </li>
+        <li>
+          <a href="./index.html" class="hover:text-gray-600">New Arrivals</a>
+        </li>
+        <li><a href="./index.html" class="hover:text-gray-600">Brands</a></li>
+      </ul>
+
+      <div class="bg-[#F0F0F0] rounded-2xl flex px-3 py-1.5 items-center">
+        <img src="./asset/image/Vector.png" alt="Search" class="w-4 h-4" />
+        <input
+          type="text"
+          placeholder="Search for products..."
+          class="outline-none hidden md:block w-80 lg:w-96 px-2 bg-transparent text-sm"
+        />
+      </div>
+
+      <div class="flex md:gap-8 gap-5 items-center">
+        <a href="./cart.html" class="relative">
+          <img src="./asset/image/Frame.png" alt="Cart" class="w-6 h-6" />
+          <span
+            id="cart-count"
+            class="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden"
+            >0</span
+          >
+        </a>
+        <a href="#"
+          ><img src="./asset/image/Frame (1).png" alt="Account" class="w-6 h-6"
+        /></a>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <nav
+      id="mobile-nav"
+      class="bg-gray-100 px-6 py-8 w-[85%] sm:w-[60%] h-full md:hidden hidden flex-col justify-between fixed top-0 left-0 z-[999] shadow-2xl transition-all"
+    >
+      <div>
+        <img src="./asset/image/SHOP.CO.png" alt="SHOP.CO" class="h-6" />
+      </div>
+
+      <ul class="flex flex-col gap-6 my-auto">
         <li>
           <a href="./index.html" class="font-semibold text-2xl text-black"
             >Home</a
@@ -77,9 +106,7 @@
           >
         </li>
         <li>
-          <a
-            href="./index.html"
-            class="font-semibold text-2xl text-shadow-black"
+          <a href="./index.html" class="font-semibold text-2xl text-black"
             >New Arrivals</a
           >
         </li>
@@ -90,163 +117,250 @@
         </li>
       </ul>
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 relative">
         <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
+          class="bg-black text-white cursor-pointer hover:bg-gray-800 font-semibold py-3 w-full rounded-full"
         >
-          <a href="">Cart</a>
+          <a href="./cart.html">Cart</a>
         </button>
         <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
+          class="bg-black text-white cursor-pointer hover:bg-gray-800 font-semibold py-3 w-full rounded-full"
         >
           Account
         </button>
 
         <div
           id="cancel-icon"
-          class="text-black text-2xl absolute right-4 top-4"
+          class="text-black font-bold text-2xl absolute right-0 -top-64 cursor-pointer"
         >
-          X
+          ✕
         </div>
       </div>
     </nav>
 
-    <div class="px-5 md:px-10 py-8 md:py-12 mx-auto">
-      <hr class="text-gray-400 md:mt-25 mt-12" />
-      <div
-        class="flex items-center gap-2 text-sm text-gray-400 mb-3 md:mb-8 mt-5"
-      >
-        <a href="./index.html">Home</a>
+    <!-- MAIN CART SECTION -->
+    <div
+      class="max-w-7xl mx-auto px-4 md:px-10 py-6 pt-32 md:pt-40"
+      id="cart-component"
+    >
+      <!-- BREADCRUMB -->
+      <div class="flex items-center gap-2 text-sm text-gray-500 mb-4 md:mb-6">
+        <a href="./index.html" class="hover:text-black">Home</a>
         <span>›</span>
-        <a href="">Cart</a>
+        <span class="text-black font-medium">Cart</span>
       </div>
-      <!-- Heading -->
-      <h1 class="text-4xl md:text-5xl font-black">YOUR CART</h1>
+
+      <!-- HEADING -->
+      <h1
+        class="text-3xl md:text-5xl font-black uppercase mb-6 md:mb-8 tracking-tight"
+      >
+        YOUR CART
+      </h1>
+
+      <!-- CART CONTENT -->
+      <div class="flex flex-col lg:flex-row gap-6 items-start w-full">
+        <!-- LEFT BOX: CART ITEMS -->
+        <div
+          id="cart-items-list"
+          class="w-full lg:w-[60%] border border-gray-200 rounded-[20px] p-4 md:p-6 space-y-4"
+        >
+          <!-- Dynamic Cart Items via JavaScript -->
+        </div>
+
+        <!-- RIGHT BOX: ORDER SUMMARY SIDEBAR -->
+        <div
+          class="w-full lg:w-[40%] border border-gray-200 rounded-[20px] p-5 md:p-6 space-y-5 sticky top-28 bg-white"
+        >
+          <h2 class="text-xl md:text-2xl font-bold">Order Summary</h2>
+
+          <div class="space-y-4 text-base border-b border-gray-100 pb-5">
+            <div class="flex justify-between text-gray-500">
+              <span>Subtotal</span>
+              <span id="subtotal-val" class="font-bold text-black">$0</span>
+            </div>
+            <div class="flex justify-between text-gray-500">
+              <span>Discount (-20%)</span>
+              <span id="discount-val" class="font-bold text-red-500">-$0</span>
+            </div>
+            <div class="flex justify-between text-gray-500">
+              <span>Delivery Fee</span>
+              <span id="delivery-val" class="font-bold text-black">$0</span>
+            </div>
+          </div>
+
+          <div class="flex justify-between text-lg md:text-xl font-bold">
+            <span>Total</span>
+            <span id="total-val" class="text-xl md:text-2xl font-bold">$0</span>
+          </div>
+
+          <!-- Promo Input -->
+          <div class="flex gap-3">
+            <div
+              class="flex-1 bg-[#F0F0F0] rounded-full px-4 py-3 flex items-center gap-2 text-sm"
+            >
+              <i class="fa-solid fa-tag text-gray-400"></i>
+              <input
+                type="text"
+                id="promo-input"
+                placeholder="Add promo code"
+                class="bg-transparent outline-none w-full text-xs sm:text-sm placeholder:text-gray-400"
+              />
+            </div>
+            <button
+              id="apply-promo-btn"
+              class="bg-black text-white rounded-full px-6 py-3 text-xs sm:text-sm font-medium hover:bg-gray-800 transition cursor-pointer flex-shrink-0"
+            >
+              Apply
+            </button>
+          </div>
+
+          <!-- Checkout Button -->
+          <button
+            class="w-full bg-black text-white rounded-full py-4 text-sm md:text-base font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition cursor-pointer"
+          >
+            Go to Checkout <i class="fa-solid fa-arrow-right text-sm"></i>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <section class="px-4 py-10 md:px-8">
+    <!-- NEWSLETTER SECTION -->
+    <section class="px-4 py-10 md:px-10 max-w-7xl mx-auto">
       <div
         class="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#000000] rounded-3xl px-6 py-8 md:px-10 md:py-9 lg:px-12"
       >
         <div class="w-full">
           <h2
-            class="max-w-[360px] text-3xl font-extrabold md:max-w-none md:text-5xl text-white"
+            class="max-w-[360px] text-3xl font-extrabold md:max-w-none md:text-4xl lg:text-5xl text-white leading-tight"
           >
-            STAY UPTO DATE ABOUT <br />
+            STAY UPTO DATE ABOUT <br class="hidden md:block" />
             OUR LATEST OFFERS
           </h2>
         </div>
-        <form class="w-full flex flex-col gap-4 md:w-[42%]">
-          <!-- EMAIL INPUT -->
+        <form
+          class="w-full flex flex-col gap-4 md:w-[42%]"
+          onsubmit="event.preventDefault()"
+        >
           <div
-            class="flex gap-3 rounded-full items-center bg-white h-14 md:w-96 px-5"
+            class="flex gap-3 rounded-full items-center bg-white h-12 md:h-14 px-5 w-full"
           >
-            <!-- Email Icon -->
-            <img src="./asset/Frame (3).png" alt="" />
+            <img src="./asset/Frame (3).png" alt="" class="w-5 h-5" />
             <input
-              type="text"
+              type="email"
               placeholder="Enter your email address"
-              class="w-full bg-transparent text-black outline-none"
+              class="w-full bg-transparent text-black outline-none text-sm"
             />
           </div>
-
-          <!-- Subscribe btn -->
           <button
-            class="h-14 rounded-full bg-white px-6 md:w-96 font-medium transition hover:bg-gray-300 text-gray-800"
+            class="h-12 md:h-14 rounded-full bg-white px-6 w-full font-medium transition hover:bg-gray-200 text-black text-sm"
           >
             Subscribe to Newsletter
           </button>
         </form>
       </div>
     </section>
+
+    <!-- FOOTER -->
     <section class="bg-[#F0F0F0]">
       <div
-        class="md:flex md:flex-row flex flex-col md:gap-35 gap-15 p-5 md:p-15"
+        class="md:flex md:flex-row flex flex-col md:gap-20 lg:gap-35 gap-10 p-5 md:p-12 max-w-7xl mx-auto"
       >
-        <div class="">
-          <img src="./asset/image/SHOP.CO.png" alt="" />
-          <p class="mt-4 w-80">
-            We have clothes that suits your style and which you’re proud to
-            wear. From women to men.
+        <div class="space-y-4">
+          <img src="./asset/image/SHOP.CO.png" alt="SHOP.CO" />
+          <p class="text-sm text-gray-600 w-full md:w-64">
+            We have clothes that suit your style and which you’re proud to wear.
+            From women to men.
           </p>
-          <div class="flex gap-3 md:mt-8 mt-4">
-            <a href="https://x.com">
-              <img src="./asset/1.png" alt="" />
-            </a>
-            <a href="https://www.facebook.com">
-              <img src="./asset/2.png" alt="" />
-            </a>
-            <a href="https://www.instagram.com/?hl=en">
-              <img src="./asset/3.png" alt="" />
-            </a>
-            <a href="https://github.com/adegbolaadeyemi">
-              <img src="./asset/4.png" alt="" />
-            </a>
+          <div class="flex gap-3 pt-2">
+            <a href="https://x.com"><img src="./asset/1.png" alt="X" /></a>
+            <a href="https://www.facebook.com"
+              ><img src="./asset/2.png" alt="Facebook"
+            /></a>
+            <a href="https://www.instagram.com/?hl=en"
+              ><img src="./asset/3.png" alt="Instagram"
+            /></a>
+            <a href="https://github.com/adegbolaadeyemi"
+              ><img src="./asset/4.png" alt="GitHub"
+            /></a>
           </div>
         </div>
-        <div class="flex gap-20 md:gap-30">
-          <!-- COMPANY -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">COMPANY</h1>
-            <a href="">About</a>
-            <a href="">Features</a>
-            <a href="">Work</a>
-            <a href="">Career</a>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full">
+          <div class="flex-col flex gap-3 text-sm">
+            <h1 class="font-bold text-base text-black tracking-wider">
+              COMPANY
+            </h1>
+            <a href="" class="text-gray-600 hover:text-black">About</a>
+            <a href="" class="text-gray-600 hover:text-black">Features</a>
+            <a href="" class="text-gray-600 hover:text-black">Work</a>
+            <a href="" class="text-gray-600 hover:text-black">Career</a>
           </div>
-          <!-- HELP -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">HELP</h1>
-            <a href="">Customer Support</a>
-            <a href="">Delivery Details</a>
-            <a href="">Terms & Condition</a>
-            <a href="">Privacy Policy</a>
+          <div class="flex-col flex gap-3 text-sm">
+            <h1 class="font-bold text-base text-black tracking-wider">HELP</h1>
+            <a href="" class="text-gray-600 hover:text-black"
+              >Customer Support</a
+            >
+            <a href="" class="text-gray-600 hover:text-black"
+              >Delivery Details</a
+            >
+            <a href="" class="text-gray-600 hover:text-black"
+              >Terms & Conditions</a
+            >
+            <a href="" class="text-gray-600 hover:text-black">Privacy Policy</a>
           </div>
-        </div>
-        <div class="flex gap-15 md:gap-30">
-          <!-- FAQ  -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">FAQ</h1>
-            <a href="">Account</a>
-            <a href="">Manage Deliveries</a>
-            <a href="">Orders</a>
-            <a href="">Payments</a>
+          <div class="flex-col flex gap-3 text-sm">
+            <h1 class="font-bold text-base text-black tracking-wider">FAQ</h1>
+            <a href="" class="text-gray-600 hover:text-black">Account</a>
+            <a href="" class="text-gray-600 hover:text-black"
+              >Manage Deliveries</a
+            >
+            <a href="" class="text-gray-600 hover:text-black">Orders</a>
+            <a href="" class="text-gray-600 hover:text-black">Payments</a>
           </div>
-          <!-- RESOURCES -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">RESOURCES</h1>
-            <a href="">Free eBooks</a>
-            <a href="">Development Tutorial</a>
-            <a href="">How to - Blog</a>
-            <a href="">Youtube Playlist</a>
+          <div class="flex-col flex gap-3 text-sm">
+            <h1 class="font-bold text-base text-black tracking-wider">
+              RESOURCES
+            </h1>
+            <a href="" class="text-gray-600 hover:text-black">Free eBooks</a>
+            <a href="" class="text-gray-600 hover:text-black"
+              >Development Tutorial</a
+            >
+            <a href="" class="text-gray-600 hover:text-black">How to - Blog</a>
+            <a href="" class="text-gray-600 hover:text-black"
+              >Youtube Playlist</a
+            >
           </div>
         </div>
       </div>
-      <hr class="mt-5" />
+
+      <hr class="border-gray-300 max-w-7xl mx-auto" />
+
       <div
-        class="flex flex-col md:flex md:flex-row gap-4 mb-0 md:justify-between p-8 md:p-12"
+        class="flex flex-col md:flex-row gap-4 justify-between items-center p-6 md:p-10 max-w-7xl mx-auto"
       >
-        <h3 class="font-light text-lg">
-          Shop.co © 2000-2023, All Rights Reserved
+        <h3 class="text-sm text-gray-500">
+          Shop.co © 2000-2026, All Rights Reserved
         </h3>
-        <div class="flex">
-          <a href="https://www.visa.com/en-us/personal/cards">
-            <img src="./asset/Badge.png" alt="" />
-          </a>
-          <a href="https://www.mastercard.com/mea/en.html">
-            <img src="./asset/Badge (1).png" alt="" />
-          </a>
-          <a href="https://www.paypal.com/ng/home">
-            <img src="./asset/Badge (2).png" alt="" />
-          </a>
-          <a href="https://www.apple.com/apple-pay/">
-            <img src="./asset/Badge (3).png" alt="" />
-          </a>
-          <a href="https://pay.google.com">
-            <img src="./asset/Badge (4).png" alt="" />
-          </a>
+        <div class="flex gap-2">
+          <a href="https://www.visa.com"
+            ><img src="./asset/Badge.png" alt="Visa" class="h-8"
+          /></a>
+          <a href="https://www.mastercard.com"
+            ><img src="./asset/Badge (1).png" alt="Mastercard" class="h-8"
+          /></a>
+          <a href="https://www.paypal.com"
+            ><img src="./asset/Badge (2).png" alt="PayPal" class="h-8"
+          /></a>
+          <a href="https://www.apple.com/apple-pay/"
+            ><img src="./asset/Badge (3).png" alt="Apple Pay" class="h-8"
+          /></a>
+          <a href="https://pay.google.com"
+            ><img src="./asset/Badge (4).png" alt="Google Pay" class="h-8"
+          /></a>
         </div>
       </div>
     </section>
+
     <script src="cart.js"></script>
   </body>
 </html>

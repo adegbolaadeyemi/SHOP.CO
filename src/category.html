@@ -1,16 +1,14 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop.Co</title>
     <link href="./output.css" rel="stylesheet" />
-    <title class="text-black">Shop.Co</title>
-    <link rel="icon" href="./asset/image/Frame.png" />
     <link rel="stylesheet" href="./index.html" />
   </head>
-  <body>
-    <!-- CATEGORY SECTION -->
-    <!------ PROMO NAV ------->
+  <body class="bg-white text-black min-h-screen font-sans">
+    <!-- PROMO BANNER -->
     <marquee
       behavior=""
       direction="right"
@@ -19,1080 +17,925 @@
       class="bg-black text-white z-50 top-0 fixed"
     >
       Sign up and get 20% off to your first order.
+
       <a href="" class="text-white underline">Sign Up Now</a>
     </marquee>
-    <!-- NAV BAR -->
+
+    <!-- Desktop & Main Navbar -->
     <nav
-      class="text-black py-3 md:px-10 px-5 flex md:p-10 justify-evenly fixed top-6 left-0 w-full z-50 bg-white"
+      class="fixed top-6 left-0 w-full z-40 bg-white border-b border-gray-100 px-4 md:px-12 py-6 flex items-center justify-between"
     >
-      <img
-        src="./asset/image/Frame (2).png"
-        alt=""
-        class="md:hidden block"
-        id="menu-icon"
-      />
-      <img src="./asset/image/SHOP.CO.png" alt="" />
-      <ul class="gap-10 items-center hidden md:flex">
-        <a href="./shop.html">Shop</a>
-        <a href="">On Sale</a>
-        <a href="./index.html">New Arrivals</a>
-        <a href="./index.html">Brands</a>
+      <div class="flex items-center gap-4">
+        <img
+          src="./asset/image/Frame (2).png"
+          alt="Open Menu"
+          class="md:hidden cursor-pointer w-6 h-6"
+          id="menu-icon"
+        />
+        <a href="./index.html"
+          ><img
+            src="./asset/image/SHOP.CO.png"
+            alt="Shop.co Logo"
+            class="h-5 md:h-6"
+        /></a>
+      </div>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm font-medium">
+        <li><a href="./shop.html" class="hover:text-gray-600">Shop</a></li>
+        <li>
+          <a href="./category.html" class="hover:text-gray-600">On Sale</a>
+        </li>
+        <li>
+          <a href="./shop.html" class="hover:text-gray-600">New Arrivals</a>
+        </li>
+        <li><a href="./index.html" class="hover:text-gray-600">Brands</a></li>
       </ul>
-      <div class="bg-[#F0F0F0] rounded-2xl flex px-2 py-1 items-center">
+
+      <!-- Search Input -->
+      <div class="bg-[#F0F0F0] rounded-2xl flex gap-1 px-2 py-1 items-center">
         <img src="./asset/image/Vector.png" alt="" class="w-4 h-4" />
+
         <input
           type="text"
           placeholder="Search for product"
-          class="outline-none hidden md:block w-96 p-1"
+          class="outline-none bg-transparent hidden md:block w-96"
         />
       </div>
-      <div class="flex md:gap-10 gap-5 items-center">
-        <a href="./cart.html"><img src="./asset/image/Frame.png" alt="" /></a>
-        <a href=""><img src="./asset/image/Frame (1).png" alt="" /></a>
+
+      <!-- Action Icons -->
+      <div class="flex items-center gap-4 md:gap-10">
+        <a href="./cart.html" class="relative">
+          <img src="./asset/image/Frame.png" alt="Cart" class="w-6 h-6" />
+          <span
+            id="cart-count"
+            class="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden"
+            >0</span
+          >
+        </a>
+        <a href="#"
+          ><img src="./asset/image/Frame (1).png" alt="Account" class="w-6 h-6"
+        /></a>
       </div>
     </nav>
-    <!-- mobile nav-bar -->
-    <nav
-      id="mobile-nav"
-      class="bg-gray-300 px-4 py-6 w-[85%] bottom-0 md:hidden hidden flex-col justify-between fixed top-0 left-0 z-999"
-    >
-      <div>
-        <img class="text-white" src="./asset/image/SHOP.CO.png" alt="" />
-      </div>
 
-      <ul class="flex flex-col gap-6">
-        <li>
-          <a href="./index.html" class="font-semibold text-2xl text-black"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="./shop.html" class="font-semibold text-2xl text-black"
-            >Shop</a
-          >
-        </li>
-        <li>
-          <a href="./category.html" class="font-semibold text-2xl text-black"
-            >On sale</a
-          >
-        </li>
-        <li>
-          <a href="index.html" class="font-semibold text-2xl text-shadow-black"
-            >New Arrivals</a
-          >
-        </li>
-        <li>
-          <a href="index.html" class="font-semibold text-2xl text-black"
-            >Brands</a
-          >
-        </li>
-      </ul>
-
-      <div class="flex flex-col gap-4">
+    <!-- Mobile Navigation -->
+    <div id="mobile-nav" class="fixed inset-0 bg-black/50 z-50 hidden">
+      <div
+        class="bg-white w-[80%] max-w-sm h-full p-6 flex flex-col justify-between relative"
+      >
         <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-500 font-semibold py-3 w-full rounded-full"
-        >
-          <a href="./cart.html">Cart</a>
-        </button>
-        <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
-        >
-          Account
-        </button>
-
-        <div
           id="cancel-icon"
-          class="text-black text-2xl absolute right-4 top-4"
+          class="absolute right-5 top-12 text-xl font-bold"
         >
-          X
+          ✕
+        </button>
+
+        <div class="mt-8 flex flex-col gap-6">
+          <img src="./asset/image/SHOP.CO.png" alt="Logo" class="w-32 mb-4" />
+          <ul class="flex flex-col gap-4 text-lg font-semibold">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./category.html">On Sale</a></li>
+            <li><a href="./shop.html">New Arrivals</a></li>
+            <li><a href="./index.html">Brands</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a
+            href="./cart.html"
+            class="bg-black text-white text-center py-3 rounded-full font-medium"
+            >View Cart</a
+          >
+          <button
+            class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
+          >
+            Account
+          </button>
         </div>
       </div>
-    </nav>
-    <!---- CASUAL PRODUCTS PAGE ---->
+    </div>
 
-    <section class="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-8 md:mt-30 mt-10">
-      <!--   -->
-      <div class="mb-5 flex items-center gap-2 text-sm text-gray-400">
+    <!-- MAIN PAGE CONTENT -->
+    <main class="mx-auto max-w-7xl px-4 md:px-8 mt-28 mb-16">
+      <!-- BREADCRUMB -->
+      <div class="mb-6 flex items-center gap-2 text-sm text-gray-400">
         <a href="./index.html" class="hover:text-black">Home</a>
         <span>›</span>
-        <span class="text-gray-600"
-          ><a href="./asset/Frame 33(a).png">Casual</a></span
-        >
+        <span class="text-gray-900 font-medium">Casual</span>
       </div>
 
-      <!-- PAGE LAYOUT -->
       <div class="flex gap-8">
-        <!----- FILTER SIDEBAR----->
+        <!-- DESKTOP FILTERS SIDEBAR -->
         <aside
-          class="hidden w-64 h-full shrink-0 rounded-2xl border border-gray-200 p-5 md:block"
+          class="hidden md:block w-64 shrink-0 rounded-2xl border border-gray-200 p-5 h-fit"
         >
-          <div class="mb-6 flex items-center justify-between">
-            <h2 class="text-lg font-bold text-gray-900">Filters</h2>
-
-            <span class="text-gray-400"
-              ><img src="./asset/Frame (4).png" alt=""
-            /></span>
+          <div class="mb-4 flex items-center justify-between">
+            <h2 class="text-xl font-bold">Filters</h2>
+            <img
+              src="./asset/Frame (4).png"
+              alt="Filter Icon"
+              class="w-5 h-5"
+            />
           </div>
-          <hr class="text-gray-200 mb-5" />
-          <!-- CATEGORY -->
-          <div class="border-b border-gray-200 pb-5">
-            <div class="space-y-4 text-sm text-gray-500">
-              <a href="" class="flex justify-between">
-                <span>T-shirts</span>
-                <span>›</span>
-              </a>
+          <hr class="border-gray-200 mb-4" />
 
-              <a href="" class="flex justify-between">
-                <span>Shorts</span>
-                <span>›</span>
-              </a>
-
-              <a href="" class="flex justify-between">
-                <span>Shirts</span>
-                <span>›</span>
-              </a>
-
-              <a href="" class="flex justify-between">
-                <span>Hoodie</span>
-                <span>›</span>
-              </a>
-
-              <a href="" class="flex justify-between">
-                <span>Jeans</span>
-                <span>›</span>
-              </a>
-            </div>
+          <!-- Categories -->
+          <div
+            class="space-y-3 text-sm text-gray-500 pb-4 border-b border-gray-200"
+          >
+            <a
+              href="#"
+              class="flex justify-between items-center hover:text-black"
+              ><span>T-shirts</span><span>›</span></a
+            >
+            <a
+              href="#"
+              class="flex justify-between items-center hover:text-black"
+              ><span>Shorts</span><span>›</span></a
+            >
+            <a
+              href="#"
+              class="flex justify-between items-center hover:text-black"
+              ><span>Shirts</span><span>›</span></a
+            >
+            <a
+              href="#"
+              class="flex justify-between items-center hover:text-black"
+              ><span>Hoodie</span><span>›</span></a
+            >
+            <a
+              href="#"
+              class="flex justify-between items-center hover:text-black"
+              ><span>Jeans</span><span>›</span></a
+            >
           </div>
 
-          <!-- PRICE -->
-          <div class="border-b border-gray-200 py-5">
-            <div class="mb-5 flex justify-between">
-              <h3 class="font-semibold">Price</h3>
-
+          <!-- Price Range Slider -->
+          <div class="py-4 border-b border-gray-200">
+            <div class="mb-3 flex justify-between font-bold text-base">
+              <span>Price</span>
               <span>⌃</span>
             </div>
-
-            <div>
-              <input
-                type="range"
-                min="50"
-                max="100"
-                value="200"
-                class="bg-[#1f2937] appearance-none w-full h-2 [&::-webkit-slider-thumb]:pointer-events-auto"
-              />
-            </div>
-
-            <div
-              class="mt-3 flex justify-between text-sm font-medium text-gray-700"
-            >
+            <input
+              type="range"
+              min="50"
+              max="300"
+              value="200"
+              class="price-range w-full accent-black cursor-pointer my-2"
+            />
+            <div class="flex justify-between text-xs font-bold">
               <span>$50</span>
-              <span>$200</span>
+              <span class="price-val">$200</span>
             </div>
           </div>
 
-          <!-- COLORS -->
-          <div class="border-b border-gray-200 py-5">
-            <div class="mb-4 flex justify-between">
-              <h3 class="font-semibold">Colors</h3>
-
-              <span>^</span>
+          <!-- Colors -->
+          <div class="py-4 border-b border-gray-200">
+            <div class="mb-3 flex justify-between font-bold text-base">
+              <span>Colors</span>
+              <span>⌃</span>
             </div>
-
             <div class="grid grid-cols-5 gap-3">
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-green-500"
+                class="color-btn w-8 h-8 rounded-full bg-green-500 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-red-500"
+                class="color-btn w-8 h-8 rounded-full bg-red-500 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-yellow-400"
+                class="color-btn w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-orange-400"
+                class="color-btn w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-sky-500"
+                class="color-btn w-8 h-8 rounded-full bg-sky-400 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white"
+                class="color-btn w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center"
               >
-                ✓
+                <span class="text-white text-xs font-bold">✓</span>
               </button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-purple-600"
+                class="color-btn w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-pink-500"
+                class="color-btn w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full border border-gray-200 bg-white hover:bg-gray-200"
+                class="color-btn w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center"
               ></button>
-
               <button
                 onclick="selectColor(this)"
-                class="color h-7 w-7 rounded-full bg-slate-600"
+                class="color-btn w-8 h-8 rounded-full bg-black flex items-center justify-center"
               ></button>
             </div>
           </div>
 
-          <!-- SIZE -->
-          <div class="border-b border-gray-200 py-5">
-            <div class="mb-4 flex justify-between">
-              <h3 class="font-semibold">Size</h3>
-
+          <!-- Sizes -->
+          <div class="py-4 border-b border-gray-200">
+            <div class="mb-3 flex justify-between font-bold text-base">
+              <span>Size</span>
               <span>⌃</span>
             </div>
-
             <div class="flex flex-wrap gap-2">
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
                 XX-Small
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
                 X-Small
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
                 Small
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
                 Medium
               </button>
-
               <button
-                class="size-btn rounded-full bg-[#1f2937] px-5 py-2 text-xs text-white"
+                class="size-btn rounded-full bg-black text-white px-3 py-1.5 text-xs font-medium"
               >
                 Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
                 X-Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
-                2X-Large
+                XX-Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
                 3X-Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-3 py-1.5 text-xs text-gray-600"
               >
                 4X-Large
               </button>
             </div>
           </div>
 
-          <!-- DRESS STYLE -->
-          <div class="py-5">
-            <div class="mb-4 flex justify-between">
-              <h3 class="font-semibold">Dress Style</h3>
-
-              <span>^</span>
+          <!-- Dress Style -->
+          <div class="py-4">
+            <div class="mb-3 flex justify-between font-bold text-base">
+              <span>Dress Style</span>
+              <span>⌃</span>
             </div>
-
-            <div class="space-y-4 text-sm text-gray-500">
-              <a href="#" class="flex justify-between">
-                <span>Casual</span>
-                <span>></span>
-              </a>
-
-              <a href="#" class="flex justify-between">
-                <span>Formal</span>
-                <span>></span>
-              </a>
-
-              <a href="#" class="flex justify-between">
-                <span>Party</span>
-                <span>></span>
-              </a>
-
-              <a href="#" class="flex justify-between">
-                <span>Gym</span>
-                <span>></span>
-              </a>
+            <div class="space-y-3 text-sm text-gray-500">
+              <a
+                href="#"
+                class="flex justify-between items-center hover:text-black"
+                ><span>Casual</span><span>›</span></a
+              >
+              <a
+                href=""
+                class="flex justify-between items-center hover:text-black"
+                ><span>Formal</span><span>›</span></a
+              >
+              <a
+                href=""
+                class="flex justify-between items-center hover:text-black"
+                ><span>Party</span><span>›</span></a
+              >
+              <a
+                href=""
+                class="flex justify-between items-center hover:text-black"
+                ><span>Gym</span><span>›</span></a
+              >
             </div>
           </div>
 
           <button
-            class="w-full rounded-full bg-[#1f2937] py-3 text-sm font-medium text-white hover:bg-black"
+            class="w-full mt-2 rounded-full bg-black py-3 text-sm font-semibold text-white hover:bg-gray-800 transition"
           >
             Apply Filter
           </button>
         </aside>
-        <!----- MOBILE FILTER SIDEBAR ----->
+
+        <!-- MOBILE FILTER OVERLAY -->
         <aside
           id="mobile-sidebar"
-          class="bg-white overflow-x-auto h-full px-6 py-6 mt-17 w-[90%] bottom-0 rounded-2xl border md:hidden hidden flex-col fixed top-0 left-0 z-999"
+          class="fixed inset-0 bg-white z-50 p-6 overflow-y-auto hidden flex-col"
         >
-          <div class="flex justify-between mb-5">
+          <div class="flex justify-between items-center mb-4">
             <h2 class="font-bold text-2xl">Filters</h2>
-            <!-- <span>X</span> -->
-          </div>
-          <hr class="text-gray-200 mb-5" />
-          <!-- CATEGORY -->
-          <div class="space-y-4 text-sm text-gray-600 font-light">
-            <a href="" class="flex justify-between">
-              <span>T-shirt</span>
-              <span>›</span>
-            </a>
-            <a href="" class="flex justify-between">
-              <span>Shorts</span>
-              <span>›</span>
-            </a>
-
-            <a href="" class="flex justify-between">
-              <span>Shirts</span>
-              <span>›</span>
-            </a>
-
-            <a href="" class="flex justify-between">
-              <span>Hoodie</span>
-              <span>›</span>
-            </a>
-
-            <a href="" class="flex justify-between">
-              <span>Jeans</span>
-              <span>›</span>
-            </a>
-          </div>
-          <!-- PRICE -->
-          <div class="border-b border-gray-200 py-5">
-            <div class="mb-5 flex justify-between">
-              <h3 class="font-semibold text-2xl">Price</h3>
-
-              <span>⌃</span>
-            </div>
-
-            <div>
-              <input
-                type="range"
-                min="50"
-                max="100"
-                value="200"
-                class="bg-[#1f2937] appearance-none w-full h-2 [&::-webkit-slider-thumb]:pointer-events-auto"
-              />
-            </div>
-
-            <div
-              class="mt-3 flex justify-between text-sm font-medium text-gray-700"
+            <button
+              id="clear-icon"
+              class="text-2xl font-bold text-gray-700 cursor-pointer"
             >
-              <span>$50</span>
-              <span>$200</span>
-            </div>
+              &times;
+            </button>
+          </div>
+          <hr class="border-gray-200 mb-4" />
+
+          <!-- Mobile Categories -->
+          <div
+            class="space-y-4 text-base text-gray-500 pb-5 border-b border-gray-200"
+          >
+            <a href="#" class="flex justify-between"
+              ><span>T-shirts</span><span>›</span></a
+            >
+            <a href="#" class="flex justify-between"
+              ><span>Shorts</span><span>›</span></a
+            >
+            <a href="#" class="flex justify-between"
+              ><span>Shirts</span><span>›</span></a
+            >
+            <a href="#" class="flex justify-between"
+              ><span>Hoodie</span><span>›</span></a
+            >
+            <a href="#" class="flex justify-between"
+              ><span>Jeans</span><span>›</span></a
+            >
           </div>
 
-          <!-- COLORS -->
-          <div class="border-b border-gray-200 py-5">
-            <div class="mb-4 flex justify-between">
-              <h3 class="font-semibold text-2xl">Colors</h3>
-
-              <span>^</span>
-            </div>
-
-            <div class="grid grid-cols-5 gap-5">
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-green-500"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-red-500"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-yellow-400"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-orange-400"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-sky-500"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white"
-              >
-                ✓
-              </button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-purple-600"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-pink-500"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full border border-gray-200 bg-white hover:bg-gray-200"
-              ></button>
-
-              <button
-                onclick="selectColor(this)"
-                class="color h-10 w-10 rounded-full bg-slate-600"
-              ></button>
-            </div>
-          </div>
-
-          <!-- SIZE -->
-          <div class="border-b border-gray-200 py-5">
-            <div class="mb-4 flex justify-between">
-              <h3 class="font-semibold text-2xl">Size</h3>
-
+          <!-- Mobile Price Slider -->
+          <div class="py-5 border-b border-gray-200">
+            <div class="mb-3 flex justify-between font-bold">
+              <span>Price</span>
               <span>⌃</span>
             </div>
+            <input
+              type="range"
+              min="50"
+              max="300"
+              value="200"
+              class="price-range w-full accent-black cursor-pointer my-2"
+            />
+            <div class="flex justify-between text-xs font-bold">
+              <span>$50</span>
+              <span class="price-val">$200</span>
+            </div>
+          </div>
 
+          <!-- Mobile Colors -->
+          <div class="py-5 border-b border-gray-200">
+            <h3 class="font-bold mb-3">Colors</h3>
+            <div class="grid grid-cols-5 gap-3">
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-green-500 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-red-500 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-yellow-400 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-sky-400 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center"
+              >
+                <span class="text-white text-xs font-bold">✓</span>
+              </button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-purple-600 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-pink-500 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-white border border-gray-300 flex items-center justify-center"
+              ></button>
+              <button
+                onclick="selectColor(this)"
+                class="color-btn w-9 h-9 rounded-full bg-black flex items-center justify-center"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Mobile Sizes -->
+          <div class="py-5 border-b border-gray-200">
+            <h3 class="font-bold mb-3">Size</h3>
             <div class="flex flex-wrap gap-2">
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
                 XX-Small
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
                 X-Small
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
                 Small
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
                 Medium
               </button>
-
               <button
-                class="size-btn rounded-full bg-[#1f2937] px-5 py-2 text-xs text-white"
+                class="size-btn rounded-full bg-black text-white px-4 py-2 text-xs"
               >
                 Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
                 X-Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
-                2X-Large
+                XX-Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
                 3X-Large
               </button>
-
               <button
-                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+                class="size-btn rounded-full bg-[#F0F0F0] px-4 py-2 text-xs"
               >
                 4X-Large
               </button>
             </div>
           </div>
 
-          <!-- DRESS STYLE -->
+          <!-- Mobile Dress Style -->
           <div class="py-5">
-            <div class="mb-4 flex justify-between">
-              <h3 class="font-semibold text-2xl">Dress Style</h3>
-
-              <span>^</span>
-            </div>
-
-            <div class="space-y-4 text-sm text-gray-500">
-              <a href="#" class="flex justify-between">
-                <span>Casual</span>
-                <span>></span>
-              </a>
-
-              <a href="#" class="flex justify-between">
-                <span>Formal</span>
-                <span>></span>
-              </a>
-
-              <a href="#" class="flex justify-between">
-                <span>Party</span>
-                <span>></span>
-              </a>
-
-              <a href="#" class="flex justify-between">
-                <span>Gym</span>
-                <span>></span>
-              </a>
+            <h3 class="font-bold mb-3">Dress Style</h3>
+            <div class="space-y-3 text-base text-gray-500">
+              <a href="#" class="flex justify-between"
+                ><span>Casual</span><span>›</span></a
+              >
+              <a href="#" class="flex justify-between"
+                ><span>Formal</span><span>›</span></a
+              >
+              <a href="#" class="flex justify-between"
+                ><span>Party</span><span>›</span></a
+              >
+              <a href="#" class="flex justify-between"
+                ><span>Gym</span><span>›</span></a
+              >
             </div>
           </div>
 
           <button
-            class="w-full rounded-full mb-15 bg-[#1f2937] py-3 text-sm font-medium text-white hover:bg-black"
+            id="apply-mobile-filter"
+            class="w-full my-6 rounded-full bg-black py-3.5 text-sm font-semibold text-white"
           >
             Apply Filter
           </button>
-
-          <div
-            id="clear-icon"
-            class="text-black text-2xl absolute right-4 top-4"
-          >
-            X
-          </div>
         </aside>
 
-        <!------ PRODUCTS ----->
-
-        <main class="min-w-0 flex-1">
-          <!-- HEADER -->
+        <!-- PRODUCTS MAIN SECTION -->
+        <section class="min-w-0 flex-1">
           <div class="mb-6 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <h1 class="text-3xl font-bold text-gray-900">Casual</h1>
-
-              <span class="text-sm text-gray-400">
-                Showing 1-10 of 100 Products
-              </span>
+            <div class="flex items-baseline gap-2">
+              <h1 class="text-2xl md:text-3xl font-black">Casual</h1>
+              <span class="text-xs md:text-sm text-gray-400"
+                >Showing 1-6 of 100 Products</span
+              >
             </div>
 
-            <!-- SORT -->
-            <div
-              class="hidden items-center gap-2 text-sm text-gray-500 md:flex"
-            >
-              <span>Sort by:</span>
+            <div class="flex items-center gap-3">
+              <div
+                class="hidden md:flex items-center gap-2 text-sm text-gray-500"
+              >
+                <span>Sort by:</span>
+                <span
+                  class="font-bold text-black flex items-center gap-1 cursor-pointer"
+                  >Most Popular ▾</span
+                >
+              </div>
 
-              <button class="font-semibold text-gray-900">
-                Most Popular
-                <span class="ml-1">⌄v</span>
+              <!-- Mobile Filter Trigger -->
+              <button
+                id="filter-icon"
+                class="flex h-9 w-9 items-center justify-center rounded-full bg-[#F0F0F0] md:hidden cursor-pointer"
+              >
+                <img src="./asset/Frame (4).png" alt="Filter" class="w-5 h-5" />
               </button>
             </div>
+          </div>
 
-            <!-- MOBILE FILTER -->
-            <div
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 md:hidden"
-            >
-              <img src="./asset/Frame (4).png" alt="" id="filter-icon" />
+          <!-- PRODUCTS GRID -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <!-- Item 1 -->
+            <div class="group relative flex flex-col justify-between">
+              <div>
+                <div
+                  class="bg-[#F0EEED] rounded-2xl p-4 h-44 sm:h-52 md:h-72 flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    src="./asset/Frame 33(a).png"
+                    alt="Gradient Graphic T-shirt"
+                    class="h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="mt-3 font-bold text-xs sm:text-sm md:text-base truncate"
+                >
+                  Gradient Graphic T-shirt
+                </h3>
+                <div
+                  class="flex items-center gap-1 text-yellow-400 text-xs mt-1"
+                >
+                  ★★★★☆
+                  <span class="text-gray-500 font-normal text-[10px] md:text-xs"
+                    >3.5/5</span
+                  >
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <span class="font-bold text-sm sm:text-base md:text-xl"
+                    >$145</span
+                  >
+                  <span
+                    class="text-gray-400 line-through text-[10px] md:text-xs"
+                    >$242</span
+                  >
+                  <span
+                    class="bg-red-100 text-red-500 text-[9px] md:text-[10px] font-bold px-1 py-0.5 rounded-full"
+                    >-20%</span
+                  >
+                </div>
+                <button
+                  onclick="
+                    addToCart(
+                      'Gradient Graphic T-shirt',
+                      145,
+                      './asset/Frame 33(a).png',
+                    )
+                  "
+                  class="bg-[#F0F0F0] hover:bg-gray-200 hover:text-white p-1.5 md:p-2 rounded-full transition cursor-pointer flex items-center justify-center"
+                >
+                  <img src="./asset/image/Frame.png" alt="Cart" />
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="group relative flex flex-col justify-between">
+              <div>
+                <div
+                  class="bg-[#F0EEED] rounded-2xl p-4 h-44 sm:h-52 md:h-72 flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    src="./asset/Frame 34.png"
+                    alt="Polo with Tipping Details"
+                    class="h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="mt-3 font-bold text-xs sm:text-sm md:text-base truncate"
+                >
+                  Polo with Tipping Details
+                </h3>
+                <div
+                  class="flex items-center gap-1 text-yellow-400 text-xs mt-1"
+                >
+                  ★★★★1/2
+                  <span class="text-gray-500 font-normal text-[10px] md:text-xs"
+                    >4.5/5</span
+                  >
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <span class="font-bold text-sm sm:text-base md:text-xl"
+                    >$180</span
+                  >
+                  <span
+                    class="text-gray-400 line-through text-[10px] md:text-xs"
+                    >$242</span
+                  >
+                  <span
+                    class="bg-red-100 text-red-500 text-[9px] md:text-[10px] font-bold px-1 py-0.5 rounded-full"
+                    >-20%</span
+                  >
+                </div>
+                <button
+                  onclick="
+                    addToCart(
+                      'Polo with Tipping Details',
+                      180,
+                      './asset/Frame 34.png',
+                    )
+                  "
+                  class="bg-[#F0F0F0] hover:bg-black hover:text-white p-1.5 md:p-2 rounded-full transition cursor-pointer flex items-center justify-center"
+                >
+                  <img
+                    src="./asset/image/Frame.png"
+                    alt="Cart"
+                    class="w-3.5 h-3.5 md:w-4 md:h-4"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="group relative flex flex-col justify-between">
+              <div>
+                <div
+                  class="bg-[#F0EEED] rounded-2xl p-4 h-44 sm:h-52 md:h-72 flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    src="./asset/Frame 38.png"
+                    alt="Black Striped T-shirt"
+                    class="h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="mt-3 font-bold text-xs sm:text-sm md:text-base truncate"
+                >
+                  Black Striped T-shirt
+                </h3>
+                <div
+                  class="flex items-center gap-1 text-yellow-400 text-xs mt-1"
+                >
+                  ★★★★★
+                  <span class="text-gray-500 font-normal text-[10px] md:text-xs"
+                    >5.0/5</span
+                  >
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <span class="font-bold text-sm sm:text-base md:text-xl"
+                    >$120</span
+                  >
+                  <span
+                    class="text-gray-400 line-through text-[10px] md:text-xs"
+                    >$160</span
+                  >
+                  <span
+                    class="bg-red-100 text-red-500 text-[9px] md:text-[10px] font-bold px-1 py-0.5 rounded-full"
+                    >-30%</span
+                  >
+                </div>
+                <button
+                  onclick="
+                    addToCart(
+                      'Black Striped T-shirt',
+                      120,
+                      './asset/Frame 38.png',
+                    )
+                  "
+                  class="bg-[#F0F0F0] hover:bg-black hover:text-white p-1.5 md:p-2 rounded-full transition cursor-pointer flex items-center justify-center"
+                >
+                  <img
+                    src="./asset/image/Frame.png"
+                    alt="Cart"
+                    class="w-3.5 h-3.5 md:w-4 md:h-4"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="group relative flex flex-col justify-between">
+              <div>
+                <div
+                  class="bg-[#F0EEED] rounded-2xl p-4 h-44 sm:h-52 md:h-72 flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    src="./asset/Frame 32.png"
+                    alt="Skinny Fit Jeans"
+                    class="h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="mt-3 font-bold text-xs sm:text-sm md:text-base truncate"
+                >
+                  Skinny Fit Jeans
+                </h3>
+                <div
+                  class="flex items-center gap-1 text-yellow-400 text-xs mt-1"
+                >
+                  ★★★★1/2
+                  <span class="text-gray-500 font-normal text-[10px] md:text-xs"
+                    >3.5/5</span
+                  >
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <span class="font-bold text-sm sm:text-base md:text-xl"
+                    >$240</span
+                  >
+                  <span
+                    class="text-gray-400 line-through text-[10px] md:text-xs"
+                    >$260</span
+                  >
+                  <span
+                    class="bg-red-100 text-red-500 text-[9px] md:text-[10px] font-bold px-1 py-0.5 rounded-full"
+                    >-20%</span
+                  >
+                </div>
+                <button
+                  onclick="
+                    addToCart('Skinny Fit Jeans', 240, './asset/Frame 32.png')
+                  "
+                  class="bg-[#F0F0F0] hover:bg-black hover:text-white p-1.5 md:p-2 rounded-full transition cursor-pointer flex items-center justify-center"
+                >
+                  <img
+                    src="./asset/image/Frame.png"
+                    alt="Cart"
+                    class="w-3.5 h-3.5 md:w-4 md:h-4"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="group relative flex flex-col justify-between">
+              <div>
+                <div
+                  class="bg-[#F0EEED] rounded-2xl p-4 h-44 sm:h-52 md:h-72 flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    src="./asset/Frame 33.png"
+                    alt="Checkered Shirt"
+                    class="h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="mt-3 font-bold text-xs sm:text-sm md:text-base truncate"
+                >
+                  Checkered Shirt
+                </h3>
+                <div
+                  class="flex items-center gap-1 text-yellow-400 text-xs mt-1"
+                >
+                  ★★★★1/2
+                  <span class="text-gray-500 font-normal text-[10px] md:text-xs"
+                    >4.5/5</span
+                  >
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <span class="font-bold text-sm sm:text-base md:text-xl"
+                  >$180</span
+                >
+                <button
+                  onclick="
+                    addToCart('Checkered Shirt', 180, './asset/Frame 33.png')
+                  "
+                  class="bg-[#F0F0F0] hover:bg-black hover:text-white p-1.5 md:p-2 rounded-full transition cursor-pointer flex items-center justify-center"
+                >
+                  <img
+                    src="./asset/image/Frame.png"
+                    alt="Cart"
+                    class="w-3.5 h-3.5 md:w-4 md:h-4"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="group relative flex flex-col justify-between">
+              <div>
+                <div
+                  class="bg-[#F0EEED] rounded-2xl p-4 h-44 sm:h-52 md:h-72 flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    src="./asset/Frame 34(a).png"
+                    alt="Sleeve Striped T-shirt"
+                    class="h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="mt-3 font-bold text-xs sm:text-sm md:text-base truncate"
+                >
+                  Sleeve Striped T-shirt
+                </h3>
+                <div
+                  class="flex items-center gap-1 text-yellow-400 text-xs mt-1"
+                >
+                  ★★★★1/2
+                  <span class="text-gray-500 font-normal text-[10px] md:text-xs"
+                    >4.5/5</span
+                  >
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <span class="font-bold text-sm sm:text-base md:text-xl"
+                    >$130</span
+                  >
+                  <span
+                    class="text-gray-400 line-through text-[10px] md:text-xs"
+                    >$160</span
+                  >
+                  <span
+                    class="bg-red-100 text-red-500 text-[9px] md:text-[10px] font-bold px-1 py-0.5 rounded-full"
+                    >-30%</span
+                  >
+                </div>
+                <button
+                  onclick="
+                    addToCart(
+                      'Sleeve Striped T-shirt',
+                      130,
+                      './asset/Frame 34(a).png',
+                    )
+                  "
+                  class="bg-[#F0F0F0] hover:bg-black hover:text-white p-1.5 md:p-2 rounded-full transition cursor-pointer flex items-center justify-center"
+                >
+                  <img
+                    src="./asset/image/Frame.png"
+                    alt="Cart"
+                    class="w-3.5 h-3.5 md:w-4 md:h-4"
+                  />
+                </button>
+              </div>
             </div>
           </div>
 
-          <!------ PRODUCT GRID ------>
-
-          <div
-            class="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-3"
-          >
-            <!-- PRODUCT 1 -->
-            <a href="" class="product-card group">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 33(a).png"
-                  alt="Gradient Graphic T-shirt"
-                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <h2
-                class="mt-3 truncate text-sm font-semibold text-gray-900 md:text-base"
-              >
-                Gradient Graphic T-shirt
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm tracking-wide text-yellow-400"> ★★★ </span>
-
-                <span class="text-xs text-gray-500"> 3.5/5 </span>
-              </div>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-xl font-bold"> $145 </span>
-
-                <span class="text-lg text-gray-400 line-through"> $242 </span>
-
-                <span
-                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
-                >
-                  -20%
-                </span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 2 -->
-            <a href="#" class="product-card group">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 34(a).png"
-                  alt="Polo with Tipping Details"
-                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
-                Polo with Tipping Details
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm text-yellow-400"> ★★★★ </span>
-
-                <span class="text-xs text-gray-500"> 4.5/5 </span>
-              </div>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-xl font-bold">$180</span>
-
-                <span class="text-lg text-gray-400 line-through"> $242 </span>
-
-                <span
-                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
-                >
-                  -20%
-                </span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 3 -->
-            <a href="#" class="product-card group">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 38(a).png"
-                  alt="Black Striped T-shirt"
-                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
-                Black Striped T-shirt
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm text-yellow-400"> ★★★★★ </span>
-
-                <span class="text-xs text-gray-500"> 5.0/5 </span>
-              </div>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-xl font-bold">$120</span>
-
-                <span class="text-lg text-gray-400 line-through"> $150 </span>
-
-                <span
-                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
-                >
-                  -30%
-                </span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 4 -->
-            <a href="#" class="product-card group">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 33.png"
-                  alt="Skinny Fit Jeans"
-                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
-                Skinny Fit Jeans
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm text-yellow-400"> ★★★ </span>
-
-                <span class="text-xs text-gray-500"> 3.5/5 </span>
-              </div>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-xl font-bold">$240</span>
-
-                <span class="text-lg text-gray-400 line-through"> $260 </span>
-
-                <span
-                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
-                >
-                  -20%
-                </span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 5 -->
-            <a href="#" class="product-card group">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 34.png"
-                  alt="Checkered Shirt"
-                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
-                Checkered Shirt
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm text-yellow-400"> ★★★★ </span>
-
-                <span class="text-xs text-gray-500"> 4.5/5 </span>
-              </div>
-
-              <div class="mt-1">
-                <span class="text-xl font-bold">$180</span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 6 -->
-            <a href="#" class="product-card group">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 38.png"
-                  alt="Sleeve Striped T-shirt"
-                  class="h-full w-full object-contain transition duration-300 hover:scale-105"
-                />
-              </div>
-
-              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
-                Sleeve Striped T-shirt
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm text-yellow-400"> ★★★★ </span>
-
-                <span class="text-xs text-gray-500"> 4.5/5 </span>
-              </div>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-xl font-bold">$130</span>
-
-                <span class="text-lg text-gray-400 line-through"> $160 </span>
-
-                <span
-                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
-                >
-                  -30%
-                </span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 7 -->
-            <a href="#">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2x md:h-64"
-              >
-                <img
-                  src="./asset/Frame 32(1).png"
-                  alt="Vertical Striped Shirt"
-                  class="h-full w-full object-contain transition duration-300 hover:scale-105"
-                />
-              </div>
-
-              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
-                Vertical Striped Shirt
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm text-yellow-400"> ★★★★★ </span>
-
-                <span class="text-xs text-gray-500"> 5.0/5 </span>
-              </div>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-xl font-bold">$212</span>
-
-                <span class="text-lg text-gray-400 line-through"> $232 </span>
-
-                <span
-                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
-                >
-                  -20%
-                </span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 8 -->
-            <a href="#">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 33(1).png"
-                  alt="Courage Graphic T-shirt"
-                  class="h-full w-full object-contain transition duration-300 hover:scale-105"
-                />
-              </div>
-
-              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
-                Courage Graphic T-shirt
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span class="text-sm text-yellow-400"> ★★★★ </span>
-
-                <span class="text-xs text-gray-500"> 4.0/5 </span>
-              </div>
-
-              <div class="mt-1">
-                <span class="text-xl font-bold">$145</span>
-              </div>
-            </a>
-
-            <!-- PRODUCT 9 -->
-            <a href="" class="hidden md:block">
-              <div
-                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
-              >
-                <img
-                  src="./asset/Frame 34(1).png"
-                  alt="Loose Fit Bermuda Shorts"
-                  class="h-full w-full object-contain hover:scale-105 transition duration-300"
-                />
-              </div>
-
-              <h2 class="mt-3 text-sm font-semibold md:text-base">
-                Loose Fit Bermuda Shorts
-              </h2>
-
-              <div class="mt-1 flex items-center gap-2">
-                <span
-                  ><img src="./asset/image/Frame 10 (3).png" alt="" class="h-4"
-                /></span>
-
-                <span class="text-xs text-gray-500"> 3.0/5 </span>
-              </div>
-
-              <div class="mt-1">
-                <span class="text-xl font-bold">$80</span>
-              </div>
-            </a>
-          </div>
-
-          <!------  PAGINATION  ----->
-
-          <div
-            class="mt-10 flex items-center justify-between border-t border-gray-200 pt-6"
-          >
+          <!-- RESPONSIVE PAGINATION -->
+          <hr class="my-6 md:my-8 border-gray-200" />
+          <div class="flex items-center justify-between text-xs md:text-sm">
+            <!-- Previous Button -->
             <button
-              class="flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm"
+              class="border border-gray-200 rounded-lg px-2.5 py-1.5 font-semibold hover:bg-gray-50 flex items-center gap-1 text-xs md:text-sm"
             >
-              ←
-              <span>Previous</span>
+              ← <span class="hidden sm:inline">Previous</span>
             </button>
 
-            <div class="items-center md:gap-2 flex">
-              <button class="h-9 w-9 rounded-lg bg-gray-100">1</button>
-
-              <button class="h-9 w-9 rounded-lg hover:bg-gray-100">2</button>
-
+            <!-- Page Numbers -->
+            <div class="flex items-center gap-1 text-xs md:text-sm">
               <button
-                class="h-9 w-9 rounded-lg hover:bg-gray-100 hidden md:block"
+                class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gray-100 font-bold"
+              >
+                1
+              </button>
+              <button class="w-7 h-7 md:w-8 md:h-8 rounded-lg hover:bg-gray-50">
+                2
+              </button>
+              <button
+                class="hidden sm:block w-7 h-7 md:w-8 md:h-8 rounded-lg hover:bg-gray-50"
               >
                 3
               </button>
-
-              <span>...</span>
-
+              <span class="px-0.5 md:px-1 text-gray-400">...</span>
               <button
-                class="h-9 w-9 rounded-lg hover:bg-gray-100 hidden md:block"
+                class="hidden sm:block w-7 h-7 md:w-8 md:h-8 rounded-lg hover:bg-gray-50"
               >
                 8
               </button>
-
-              <button class="h-9 w-9 rounded-lg hover:bg-gray-100">9</button>
-
-              <button class="h-9 w-9 rounded-lg hover:bg-gray-100">10</button>
+              <button
+                class="hidden sm:block w-7 h-7 md:w-8 md:h-8 rounded-lg hover:bg-gray-50"
+              >
+                9
+              </button>
+              <button class="w-7 h-7 md:w-8 md:h-8 rounded-lg hover:bg-gray-50">
+                10
+              </button>
             </div>
 
+            <!-- Next Button -->
             <button
-              class="flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm"
+              class="border border-gray-200 rounded-lg px-2.5 py-1.5 font-semibold hover:bg-gray-50 flex items-center gap-1 text-xs md:text-sm"
             >
-              <span>Next</span>
-              →
+              <span class="hidden sm:inline">Next</span> →
             </button>
           </div>
-        </main>
+        </section>
       </div>
-    </section>
-    <section class="px-4 py-10 md:px-8">
-      <div
-        class="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#000000] rounded-3xl px-6 py-8 md:px-10 md:py-9 lg:px-12"
-      >
-        <div class="w-full">
-          <h2
-            class="max-w-[360px] text-3xl font-extrabold md:max-w-none md:text-5xl text-white"
-          >
-            STAY UPTO DATE ABOUT <br />
-            OUR LATEST OFFERS
-          </h2>
-        </div>
-        <form class="w-full flex flex-col gap-4 md:w-[42%]">
-          <!-- EMAIL INPUT -->
-          <div
-            class="flex gap-3 rounded-full items-center bg-white h-14 md:w-96 px-5"
-          >
-            <!-- Email Icon -->
-            <img src="./asset/Frame (3).png" alt="" />
-            <input
-              type="text"
-              placeholder="Enter your email address"
-              class="w-full bg-transparent text-black outline-none"
-            />
-          </div>
+    </main>
 
-          <!-- Subscribe btn -->
-          <button
-            class="h-14 rounded-full bg-white px-6 md:w-96 font-medium transition hover:bg-gray-300 text-gray-800"
-          >
-            Subscribe to Newsletter
-          </button>
-        </form>
-      </div>
-    </section>
-    <section class="bg-[#F0F0F0]">
-      <div
-        class="md:flex md:flex-row flex flex-col md:gap-35 gap-15 p-5 md:p-15"
-      >
-        <div class="">
-          <img src="./asset/image/SHOP.CO.png" alt="" />
-          <p class="mt-4 w-80">
-            We have clothes that suits your style and which you’re proud to
-            wear. From women to men.
-          </p>
-          <div class="flex gap-3 md:mt-8 mt-4">
-            <a href="https://x.com">
-              <img src="./asset/1.png" alt="" />
-            </a>
-            <a href="https://www.facebook.com">
-              <img src="./asset/2.png" alt="" />
-            </a>
-            <a href="https://www.instagram.com/?hl=en">
-              <img src="./asset/3.png" alt="" />
-            </a>
-            <a href="https://github.com/adegbolaadeyemi">
-              <img src="./asset/4.png" alt="" />
-            </a>
-          </div>
-        </div>
-        <div class="flex gap-20 md:gap-30">
-          <!-- COMPANY -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">COMPANY</h1>
-            <a href="">About</a>
-            <a href="">Features</a>
-            <a href="">Work</a>
-            <a href="">Career</a>
-          </div>
-          <!-- HELP -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">HELP</h1>
-            <a href="">Customer Support</a>
-            <a href="">Delivery Details</a>
-            <a href="">Terms & Condition</a>
-            <a href="">Privacy Policy</a>
-          </div>
-        </div>
-        <div class="flex gap-15 md:gap-30">
-          <!-- FAQ  -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">FAQ</h1>
-            <a href="">Account</a>
-            <a href="">Manage Deliveries</a>
-            <a href="">Orders</a>
-            <a href="">Payments</a>
-          </div>
-          <!-- RESOURCES -->
-          <div class="flex-col flex gap-4">
-            <h1 class="font-light text-2xl text-black">RESOURCES</h1>
-            <a href="">Free eBooks</a>
-            <a href="">Development Tutorial</a>
-            <a href="">How to - Blog</a>
-            <a href="">Youtube Playlist</a>
-          </div>
-        </div>
-      </div>
-      <hr class="mt-5" />
-      <div
-        class="flex flex-col md:flex md:flex-row gap-4 mb-0 md:justify-between p-8 md:p-12"
-      >
-        <h3 class="font-light text-lg">
-          Shop.co © 2000-2023, All Rights Reserved
-        </h3>
-        <div class="flex">
-          <a href="https://www.visa.com/en-us/personal/cards">
-            <img src="./asset/Badge.png" alt="" />
-          </a>
-          <a href="https://www.mastercard.com/mea/en.html">
-            <img src="./asset/Badge (1).png" alt="" />
-          </a>
-          <a href="https://www.paypal.com/ng/home">
-            <img src="./asset/Badge (2).png" alt="" />
-          </a>
-          <a href="https://www.apple.com/apple-pay/">
-            <img src="./asset/Badge (3).png" alt="" />
-          </a>
-          <a href="https://pay.google.com">
-            <img src="./asset/Badge (4).png" alt="" />
-          </a>
-        </div>
-      </div>
-    </section>
-    <script src="category.js"></script>
+    <script src="./category.js"></script>
   </body>
 </html>
