@@ -1,0 +1,1098 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title class="text-black">Shop.Co</title>
+    <link rel="icon" href="./asset/image/Frame.png" />
+    <link rel="stylesheet" href="./index.html" />
+  </head>
+  <body>
+    <!-- CATEGORY SECTION -->
+    <!------ PROMO NAV ------->
+    <marquee
+      behavior=""
+      direction="right"
+      speed="12"
+      bg="black"
+      class="bg-black text-white z-50 top-0 fixed"
+    >
+      Sign up and get 20% off to your first order.
+      <a href="" class="text-white underline">Sign Up Now</a>
+    </marquee>
+    <!-- NAV BAR -->
+    <nav
+      class="text-black py-3 md:px-10 px-5 flex md:p-10 justify-evenly fixed top-6 left-0 w-full z-50 bg-white"
+    >
+      <img
+        src="./asset/image/Frame (2).png"
+        alt=""
+        class="md:hidden block"
+        id="menu-icon"
+      />
+      <img src="./asset/image/SHOP.CO.png" alt="" />
+      <ul class="gap-10 items-center hidden md:flex">
+        <a href="./shop.html">Shop</a>
+        <a href="">On Sale</a>
+        <a href="./index.html">New Arrivals</a>
+        <a href="./index.html">Brands</a>
+      </ul>
+      <div class="bg-[#F0F0F0] rounded-2xl flex px-2 py-1 items-center">
+        <img src="./asset/image/Vector.png" alt="" class="w-4 h-4" />
+        <input
+          type="text"
+          placeholder="Search for product"
+          class="outline-none hidden md:block w-96 p-1"
+        />
+      </div>
+      <div class="flex md:gap-10 gap-5 items-center">
+        <a href="./cart.html"><img src="./asset/image/Frame.png" alt="" /></a>
+        <a href=""><img src="./asset/image/Frame (1).png" alt="" /></a>
+      </div>
+    </nav>
+    <!-- mobile nav-bar -->
+    <nav
+      id="mobile-nav"
+      class="bg-gray-300 px-4 py-6 w-[85%] bottom-0 md:hidden hidden flex-col justify-between fixed top-0 left-0 z-999"
+    >
+      <div>
+        <img class="text-white" src="./asset/image/SHOP.CO.png" alt="" />
+      </div>
+
+      <ul class="flex flex-col gap-6">
+        <li>
+          <a href="./index.html" class="font-semibold text-2xl text-black"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="./shop.html" class="font-semibold text-2xl text-black"
+            >Shop</a
+          >
+        </li>
+        <li>
+          <a href="./category.html" class="font-semibold text-2xl text-black"
+            >On sale</a
+          >
+        </li>
+        <li>
+          <a href="index.html" class="font-semibold text-2xl text-shadow-black"
+            >New Arrivals</a
+          >
+        </li>
+        <li>
+          <a href="index.html" class="font-semibold text-2xl text-black"
+            >Brands</a
+          >
+        </li>
+      </ul>
+
+      <div class="flex flex-col gap-4">
+        <button
+          class="bg-black text-white cursor-pointer hover:bg-gray-500 font-semibold py-3 w-full rounded-full"
+        >
+          <a href="./cart.html">Cart</a>
+        </button>
+        <button
+          class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
+        >
+          Account
+        </button>
+
+        <div
+          id="cancel-icon"
+          class="text-black text-2xl absolute right-4 top-4"
+        >
+          X
+        </div>
+      </div>
+    </nav>
+    <!---- CASUAL PRODUCTS PAGE ---->
+
+    <section class="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-8 md:mt-30 mt-10">
+      <!--   -->
+      <div class="mb-5 flex items-center gap-2 text-sm text-gray-400">
+        <a href="./index.html" class="hover:text-black">Home</a>
+        <span>›</span>
+        <span class="text-gray-600"
+          ><a href="./asset/Frame 33(a).png">Casual</a></span
+        >
+      </div>
+
+      <!-- PAGE LAYOUT -->
+      <div class="flex gap-8">
+        <!----- FILTER SIDEBAR----->
+        <aside
+          class="hidden w-64 h-full shrink-0 rounded-2xl border border-gray-200 p-5 md:block"
+        >
+          <div class="mb-6 flex items-center justify-between">
+            <h2 class="text-lg font-bold text-gray-900">Filters</h2>
+
+            <span class="text-gray-400"
+              ><img src="./asset/Frame (4).png" alt=""
+            /></span>
+          </div>
+          <hr class="text-gray-200 mb-5" />
+          <!-- CATEGORY -->
+          <div class="border-b border-gray-200 pb-5">
+            <div class="space-y-4 text-sm text-gray-500">
+              <a href="" class="flex justify-between">
+                <span>T-shirts</span>
+                <span>›</span>
+              </a>
+
+              <a href="" class="flex justify-between">
+                <span>Shorts</span>
+                <span>›</span>
+              </a>
+
+              <a href="" class="flex justify-between">
+                <span>Shirts</span>
+                <span>›</span>
+              </a>
+
+              <a href="" class="flex justify-between">
+                <span>Hoodie</span>
+                <span>›</span>
+              </a>
+
+              <a href="" class="flex justify-between">
+                <span>Jeans</span>
+                <span>›</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- PRICE -->
+          <div class="border-b border-gray-200 py-5">
+            <div class="mb-5 flex justify-between">
+              <h3 class="font-semibold">Price</h3>
+
+              <span>⌃</span>
+            </div>
+
+            <div>
+              <input
+                type="range"
+                min="50"
+                max="100"
+                value="200"
+                class="bg-[#1f2937] appearance-none w-full h-2 [&::-webkit-slider-thumb]:pointer-events-auto"
+              />
+            </div>
+
+            <div
+              class="mt-3 flex justify-between text-sm font-medium text-gray-700"
+            >
+              <span>$50</span>
+              <span>$200</span>
+            </div>
+          </div>
+
+          <!-- COLORS -->
+          <div class="border-b border-gray-200 py-5">
+            <div class="mb-4 flex justify-between">
+              <h3 class="font-semibold">Colors</h3>
+
+              <span>^</span>
+            </div>
+
+            <div class="grid grid-cols-5 gap-3">
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-green-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-red-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-yellow-400"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-orange-400"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-sky-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white"
+              >
+                ✓
+              </button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-purple-600"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-pink-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full border border-gray-200 bg-white hover:bg-gray-200"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-7 w-7 rounded-full bg-slate-600"
+              ></button>
+            </div>
+          </div>
+
+          <!-- SIZE -->
+          <div class="border-b border-gray-200 py-5">
+            <div class="mb-4 flex justify-between">
+              <h3 class="font-semibold">Size</h3>
+
+              <span>⌃</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                XX-Small
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                X-Small
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                Small
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                Medium
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-[#1f2937] px-5 py-2 text-xs text-white"
+              >
+                Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                X-Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                2X-Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                3X-Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                4X-Large
+              </button>
+            </div>
+          </div>
+
+          <!-- DRESS STYLE -->
+          <div class="py-5">
+            <div class="mb-4 flex justify-between">
+              <h3 class="font-semibold">Dress Style</h3>
+
+              <span>^</span>
+            </div>
+
+            <div class="space-y-4 text-sm text-gray-500">
+              <a href="#" class="flex justify-between">
+                <span>Casual</span>
+                <span>></span>
+              </a>
+
+              <a href="#" class="flex justify-between">
+                <span>Formal</span>
+                <span>></span>
+              </a>
+
+              <a href="#" class="flex justify-between">
+                <span>Party</span>
+                <span>></span>
+              </a>
+
+              <a href="#" class="flex justify-between">
+                <span>Gym</span>
+                <span>></span>
+              </a>
+            </div>
+          </div>
+
+          <button
+            class="w-full rounded-full bg-[#1f2937] py-3 text-sm font-medium text-white hover:bg-black"
+          >
+            Apply Filter
+          </button>
+        </aside>
+        <!----- MOBILE FILTER SIDEBAR ----->
+        <aside
+          id="mobile-sidebar"
+          class="bg-white overflow-x-auto h-full px-6 py-6 mt-17 w-[90%] bottom-0 rounded-2xl border md:hidden hidden flex-col fixed top-0 left-0 z-999"
+        >
+          <div class="flex justify-between mb-5">
+            <h2 class="font-bold text-2xl">Filters</h2>
+            <!-- <span>X</span> -->
+          </div>
+          <hr class="text-gray-200 mb-5" />
+          <!-- CATEGORY -->
+          <div class="space-y-4 text-sm text-gray-600 font-light">
+            <a href="" class="flex justify-between">
+              <span>T-shirt</span>
+              <span>›</span>
+            </a>
+            <a href="" class="flex justify-between">
+              <span>Shorts</span>
+              <span>›</span>
+            </a>
+
+            <a href="" class="flex justify-between">
+              <span>Shirts</span>
+              <span>›</span>
+            </a>
+
+            <a href="" class="flex justify-between">
+              <span>Hoodie</span>
+              <span>›</span>
+            </a>
+
+            <a href="" class="flex justify-between">
+              <span>Jeans</span>
+              <span>›</span>
+            </a>
+          </div>
+          <!-- PRICE -->
+          <div class="border-b border-gray-200 py-5">
+            <div class="mb-5 flex justify-between">
+              <h3 class="font-semibold text-2xl">Price</h3>
+
+              <span>⌃</span>
+            </div>
+
+            <div>
+              <input
+                type="range"
+                min="50"
+                max="100"
+                value="200"
+                class="bg-[#1f2937] appearance-none w-full h-2 [&::-webkit-slider-thumb]:pointer-events-auto"
+              />
+            </div>
+
+            <div
+              class="mt-3 flex justify-between text-sm font-medium text-gray-700"
+            >
+              <span>$50</span>
+              <span>$200</span>
+            </div>
+          </div>
+
+          <!-- COLORS -->
+          <div class="border-b border-gray-200 py-5">
+            <div class="mb-4 flex justify-between">
+              <h3 class="font-semibold text-2xl">Colors</h3>
+
+              <span>^</span>
+            </div>
+
+            <div class="grid grid-cols-5 gap-5">
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-green-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-red-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-yellow-400"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-orange-400"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-sky-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white"
+              >
+                ✓
+              </button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-purple-600"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-pink-500"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full border border-gray-200 bg-white hover:bg-gray-200"
+              ></button>
+
+              <button
+                onclick="selectColor(this)"
+                class="color h-10 w-10 rounded-full bg-slate-600"
+              ></button>
+            </div>
+          </div>
+
+          <!-- SIZE -->
+          <div class="border-b border-gray-200 py-5">
+            <div class="mb-4 flex justify-between">
+              <h3 class="font-semibold text-2xl">Size</h3>
+
+              <span>⌃</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                XX-Small
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                X-Small
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                Small
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                Medium
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-[#1f2937] px-5 py-2 text-xs text-white"
+              >
+                Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                X-Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                2X-Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                3X-Large
+              </button>
+
+              <button
+                class="size-btn rounded-full bg-gray-100 px-4 py-2 text-xs"
+              >
+                4X-Large
+              </button>
+            </div>
+          </div>
+
+          <!-- DRESS STYLE -->
+          <div class="py-5">
+            <div class="mb-4 flex justify-between">
+              <h3 class="font-semibold text-2xl">Dress Style</h3>
+
+              <span>^</span>
+            </div>
+
+            <div class="space-y-4 text-sm text-gray-500">
+              <a href="#" class="flex justify-between">
+                <span>Casual</span>
+                <span>></span>
+              </a>
+
+              <a href="#" class="flex justify-between">
+                <span>Formal</span>
+                <span>></span>
+              </a>
+
+              <a href="#" class="flex justify-between">
+                <span>Party</span>
+                <span>></span>
+              </a>
+
+              <a href="#" class="flex justify-between">
+                <span>Gym</span>
+                <span>></span>
+              </a>
+            </div>
+          </div>
+
+          <button
+            class="w-full rounded-full mb-15 bg-[#1f2937] py-3 text-sm font-medium text-white hover:bg-black"
+          >
+            Apply Filter
+          </button>
+
+          <div
+            id="clear-icon"
+            class="text-black text-2xl absolute right-4 top-4"
+          >
+            X
+          </div>
+        </aside>
+
+        <!------ PRODUCTS ----->
+
+        <main class="min-w-0 flex-1">
+          <!-- HEADER -->
+          <div class="mb-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <h1 class="text-3xl font-bold text-gray-900">Casual</h1>
+
+              <span class="text-sm text-gray-400">
+                Showing 1-10 of 100 Products
+              </span>
+            </div>
+
+            <!-- SORT -->
+            <div
+              class="hidden items-center gap-2 text-sm text-gray-500 md:flex"
+            >
+              <span>Sort by:</span>
+
+              <button class="font-semibold text-gray-900">
+                Most Popular
+                <span class="ml-1">⌄v</span>
+              </button>
+            </div>
+
+            <!-- MOBILE FILTER -->
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 md:hidden"
+            >
+              <img src="./asset/Frame (4).png" alt="" id="filter-icon" />
+            </div>
+          </div>
+
+          <!------ PRODUCT GRID ------>
+
+          <div
+            class="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-3"
+          >
+            <!-- PRODUCT 1 -->
+            <a href="" class="product-card group">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 33(a).png"
+                  alt="Gradient Graphic T-shirt"
+                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <h2
+                class="mt-3 truncate text-sm font-semibold text-gray-900 md:text-base"
+              >
+                Gradient Graphic T-shirt
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm tracking-wide text-yellow-400"> ★★★ </span>
+
+                <span class="text-xs text-gray-500"> 3.5/5 </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-xl font-bold"> $145 </span>
+
+                <span class="text-lg text-gray-400 line-through"> $242 </span>
+
+                <span
+                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
+                >
+                  -20%
+                </span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 2 -->
+            <a href="#" class="product-card group">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 34(a).png"
+                  alt="Polo with Tipping Details"
+                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
+                Polo with Tipping Details
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm text-yellow-400"> ★★★★ </span>
+
+                <span class="text-xs text-gray-500"> 4.5/5 </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-xl font-bold">$180</span>
+
+                <span class="text-lg text-gray-400 line-through"> $242 </span>
+
+                <span
+                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
+                >
+                  -20%
+                </span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 3 -->
+            <a href="#" class="product-card group">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 38(a).png"
+                  alt="Black Striped T-shirt"
+                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
+                Black Striped T-shirt
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm text-yellow-400"> ★★★★★ </span>
+
+                <span class="text-xs text-gray-500"> 5.0/5 </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-xl font-bold">$120</span>
+
+                <span class="text-lg text-gray-400 line-through"> $150 </span>
+
+                <span
+                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
+                >
+                  -30%
+                </span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 4 -->
+            <a href="#" class="product-card group">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 33.png"
+                  alt="Skinny Fit Jeans"
+                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
+                Skinny Fit Jeans
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm text-yellow-400"> ★★★ </span>
+
+                <span class="text-xs text-gray-500"> 3.5/5 </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-xl font-bold">$240</span>
+
+                <span class="text-lg text-gray-400 line-through"> $260 </span>
+
+                <span
+                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
+                >
+                  -20%
+                </span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 5 -->
+            <a href="#" class="product-card group">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 34.png"
+                  alt="Checkered Shirt"
+                  class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
+                Checkered Shirt
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm text-yellow-400"> ★★★★ </span>
+
+                <span class="text-xs text-gray-500"> 4.5/5 </span>
+              </div>
+
+              <div class="mt-1">
+                <span class="text-xl font-bold">$180</span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 6 -->
+            <a href="#" class="product-card group">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 38.png"
+                  alt="Sleeve Striped T-shirt"
+                  class="h-full w-full object-contain transition duration-300 hover:scale-105"
+                />
+              </div>
+
+              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
+                Sleeve Striped T-shirt
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm text-yellow-400"> ★★★★ </span>
+
+                <span class="text-xs text-gray-500"> 4.5/5 </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-xl font-bold">$130</span>
+
+                <span class="text-lg text-gray-400 line-through"> $160 </span>
+
+                <span
+                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
+                >
+                  -30%
+                </span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 7 -->
+            <a href="#">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2x md:h-64"
+              >
+                <img
+                  src="./asset/Frame 32(1).png"
+                  alt="Vertical Striped Shirt"
+                  class="h-full w-full object-contain transition duration-300 hover:scale-105"
+                />
+              </div>
+
+              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
+                Vertical Striped Shirt
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm text-yellow-400"> ★★★★★ </span>
+
+                <span class="text-xs text-gray-500"> 5.0/5 </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-xl font-bold">$212</span>
+
+                <span class="text-lg text-gray-400 line-through"> $232 </span>
+
+                <span
+                  class="rounded-full bg-red-50 px-2 py-1 text-xs text-red-400"
+                >
+                  -20%
+                </span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 8 -->
+            <a href="#">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 33(1).png"
+                  alt="Courage Graphic T-shirt"
+                  class="h-full w-full object-contain transition duration-300 hover:scale-105"
+                />
+              </div>
+
+              <h2 class="mt-3 truncate text-sm font-semibold md:text-base">
+                Courage Graphic T-shirt
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span class="text-sm text-yellow-400"> ★★★★ </span>
+
+                <span class="text-xs text-gray-500"> 4.0/5 </span>
+              </div>
+
+              <div class="mt-1">
+                <span class="text-xl font-bold">$145</span>
+              </div>
+            </a>
+
+            <!-- PRODUCT 9 -->
+            <a href="" class="hidden md:block">
+              <div
+                class="flex h-52 items-center justify-center overflow-hidden rounded-2xl md:h-64"
+              >
+                <img
+                  src="./asset/Frame 34(1).png"
+                  alt="Loose Fit Bermuda Shorts"
+                  class="h-full w-full object-contain hover:scale-105 transition duration-300"
+                />
+              </div>
+
+              <h2 class="mt-3 text-sm font-semibold md:text-base">
+                Loose Fit Bermuda Shorts
+              </h2>
+
+              <div class="mt-1 flex items-center gap-2">
+                <span
+                  ><img src="./asset/image/Frame 10 (3).png" alt="" class="h-4"
+                /></span>
+
+                <span class="text-xs text-gray-500"> 3.0/5 </span>
+              </div>
+
+              <div class="mt-1">
+                <span class="text-xl font-bold">$80</span>
+              </div>
+            </a>
+          </div>
+
+          <!------  PAGINATION  ----->
+
+          <div
+            class="mt-10 flex items-center justify-between border-t border-gray-200 pt-6"
+          >
+            <button
+              class="flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm"
+            >
+              ←
+              <span>Previous</span>
+            </button>
+
+            <div class="items-center md:gap-2 flex">
+              <button class="h-9 w-9 rounded-lg bg-gray-100">1</button>
+
+              <button class="h-9 w-9 rounded-lg hover:bg-gray-100">2</button>
+
+              <button
+                class="h-9 w-9 rounded-lg hover:bg-gray-100 hidden md:block"
+              >
+                3
+              </button>
+
+              <span>...</span>
+
+              <button
+                class="h-9 w-9 rounded-lg hover:bg-gray-100 hidden md:block"
+              >
+                8
+              </button>
+
+              <button class="h-9 w-9 rounded-lg hover:bg-gray-100">9</button>
+
+              <button class="h-9 w-9 rounded-lg hover:bg-gray-100">10</button>
+            </div>
+
+            <button
+              class="flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm"
+            >
+              <span>Next</span>
+              →
+            </button>
+          </div>
+        </main>
+      </div>
+    </section>
+    <section class="px-4 py-10 md:px-8">
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#000000] rounded-3xl px-6 py-8 md:px-10 md:py-9 lg:px-12"
+      >
+        <div class="w-full">
+          <h2
+            class="max-w-[360px] text-3xl font-extrabold md:max-w-none md:text-5xl text-white"
+          >
+            STAY UPTO DATE ABOUT <br />
+            OUR LATEST OFFERS
+          </h2>
+        </div>
+        <form class="w-full flex flex-col gap-4 md:w-[42%]">
+          <!-- EMAIL INPUT -->
+          <div
+            class="flex gap-3 rounded-full items-center bg-white h-14 md:w-96 px-5"
+          >
+            <!-- Email Icon -->
+            <img src="./asset/Frame (3).png" alt="" />
+            <input
+              type="text"
+              placeholder="Enter your email address"
+              class="w-full bg-transparent text-black outline-none"
+            />
+          </div>
+
+          <!-- Subscribe btn -->
+          <button
+            class="h-14 rounded-full bg-white px-6 md:w-96 font-medium transition hover:bg-gray-300 text-gray-800"
+          >
+            Subscribe to Newsletter
+          </button>
+        </form>
+      </div>
+    </section>
+    <section class="bg-[#F0F0F0]">
+      <div
+        class="md:flex md:flex-row flex flex-col md:gap-35 gap-15 p-5 md:p-15"
+      >
+        <div class="">
+          <img src="./asset/image/SHOP.CO.png" alt="" />
+          <p class="mt-4 w-80">
+            We have clothes that suits your style and which you’re proud to
+            wear. From women to men.
+          </p>
+          <div class="flex gap-3 md:mt-8 mt-4">
+            <a href="https://x.com">
+              <img src="./asset/1.png" alt="" />
+            </a>
+            <a href="https://www.facebook.com">
+              <img src="./asset/2.png" alt="" />
+            </a>
+            <a href="https://www.instagram.com/?hl=en">
+              <img src="./asset/3.png" alt="" />
+            </a>
+            <a href="https://github.com/adegbolaadeyemi">
+              <img src="./asset/4.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="flex gap-20 md:gap-30">
+          <!-- COMPANY -->
+          <div class="flex-col flex gap-4">
+            <h1 class="font-light text-2xl text-black">COMPANY</h1>
+            <a href="">About</a>
+            <a href="">Features</a>
+            <a href="">Work</a>
+            <a href="">Career</a>
+          </div>
+          <!-- HELP -->
+          <div class="flex-col flex gap-4">
+            <h1 class="font-light text-2xl text-black">HELP</h1>
+            <a href="">Customer Support</a>
+            <a href="">Delivery Details</a>
+            <a href="">Terms & Condition</a>
+            <a href="">Privacy Policy</a>
+          </div>
+        </div>
+        <div class="flex gap-15 md:gap-30">
+          <!-- FAQ  -->
+          <div class="flex-col flex gap-4">
+            <h1 class="font-light text-2xl text-black">FAQ</h1>
+            <a href="">Account</a>
+            <a href="">Manage Deliveries</a>
+            <a href="">Orders</a>
+            <a href="">Payments</a>
+          </div>
+          <!-- RESOURCES -->
+          <div class="flex-col flex gap-4">
+            <h1 class="font-light text-2xl text-black">RESOURCES</h1>
+            <a href="">Free eBooks</a>
+            <a href="">Development Tutorial</a>
+            <a href="">How to - Blog</a>
+            <a href="">Youtube Playlist</a>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-5" />
+      <div
+        class="flex flex-col md:flex md:flex-row gap-4 mb-0 md:justify-between p-8 md:p-12"
+      >
+        <h3 class="font-light text-lg">
+          Shop.co © 2000-2023, All Rights Reserved
+        </h3>
+        <div class="flex">
+          <a href="https://www.visa.com/en-us/personal/cards">
+            <img src="./asset/Badge.png" alt="" />
+          </a>
+          <a href="https://www.mastercard.com/mea/en.html">
+            <img src="./asset/Badge (1).png" alt="" />
+          </a>
+          <a href="https://www.paypal.com/ng/home">
+            <img src="./asset/Badge (2).png" alt="" />
+          </a>
+          <a href="https://www.apple.com/apple-pay/">
+            <img src="./asset/Badge (3).png" alt="" />
+          </a>
+          <a href="https://pay.google.com">
+            <img src="./asset/Badge (4).png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <script src="category.js"></script>
+  </body>
+</html>
