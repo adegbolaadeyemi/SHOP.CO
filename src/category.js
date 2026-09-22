@@ -14,7 +14,47 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileNav.style.display = "none";
     });
   }
+  // SEARCH INPUT
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("search-input");
 
+    if (searchInput) {
+      // 1. Real-time filtering as you type
+      searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase().trim();
+
+        // Target product cards on your category/shop page
+        const productCards = document.querySelectorAll("main .group");
+
+        productCards.forEach((card) => {
+          // Get product title text inside the card
+          const titleElement = card.querySelector("h3");
+          if (titleElement) {
+            const titleText = titleElement.textContent.toLowerCase();
+            if (titleText.includes(query)) {
+              card.style.display = "block"; // Show item
+            } else {
+              card.style.display = "none"; // Hide item
+            }
+          }
+        });
+      });
+
+      // 2. Redirect on Enter key (Optional: useful if user presses Enter on another page)
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && searchInput.value.trim() !== "") {
+          const query = encodeURIComponent(searchInput.value.trim());
+          // Redirect to shop page with query string if not already there
+          if (
+            !window.location.pathname.includes("category.html") &&
+            !window.location.pathname.includes("shop.html")
+          ) {
+            window.location.href = `./category.html?search=${query}`;
+          }
+        }
+      });
+    }
+  });
   // Mobile filter sidebar drawer toggle
   const filterIcon = document.getElementById("filter-icon");
   const mobileSidebar = document.getElementById("mobile-sidebar");

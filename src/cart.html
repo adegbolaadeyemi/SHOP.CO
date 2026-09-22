@@ -14,38 +14,37 @@
   <body class="bg-white font-sans text-black">
     <!-- PROMO BANNER -->
     <marquee
-      behavior="scroll"
+      behavior=""
       direction="right"
-      scrollamount="8"
-      class="bg-black text-white z-50 top-0 fixed py-1.5 text-xs sm:text-sm font-medium"
+      speed="12"
+      bg="black"
+      class="bg-black text-white z-50 top-0 fixed w-full py-1 text-sm"
     >
       Sign up and get 20% off to your first order.
-      <a href="#" class="text-white underline font-semibold ml-1"
-        >Sign Up Now</a
-      >
+      <a href="" class="text-white underline">Sign Up Now</a>
     </marquee>
 
-    <!-- NAVBAR -->
+    <!-- Desktop & Main Navbar -->
     <nav
-      class="text-black py-4 md:px-10 px-5 flex justify-between items-center fixed top-7 left-0 w-full z-40 bg-white border-b border-gray-100"
+      class="fixed top-6 left-0 w-full z-40 bg-white border-b border-gray-100 px-4 md:px-12 py-6 flex items-center justify-between"
     >
       <div class="flex items-center gap-4">
         <img
           src="./asset/image/Frame (2).png"
-          alt="Menu"
-          class="md:hidden block cursor-pointer"
+          alt="Open Menu"
+          class="md:hidden cursor-pointer w-6 h-6"
           id="menu-icon"
         />
         <a href="./index.html">
           <img
             src="./asset/image/SHOP.CO.png"
-            alt="SHOP.CO"
+            alt="Shop.co Logo"
             class="h-5 md:h-6"
           />
         </a>
       </div>
 
-      <ul class="gap-10 items-center hidden md:flex font-medium text-sm">
+      <ul class="hidden md:flex gap-8 items-center text-sm font-medium">
         <li><a href="./shop.html" class="hover:text-gray-600">Shop</a></li>
         <li>
           <a href="./category.html" class="hover:text-gray-600">On Sale</a>
@@ -56,16 +55,35 @@
         <li><a href="./index.html" class="hover:text-gray-600">Brands</a></li>
       </ul>
 
-      <div class="bg-[#F0F0F0] rounded-2xl flex px-3 py-1.5 items-center">
-        <img src="./asset/image/Vector.png" alt="Search" class="w-4 h-4" />
+      <!-- Search Input Bar -->
+      <div class="bg-[#F0F0F0] rounded-2xl flex gap-1 px-2 py-1 items-center">
+        <img src="./asset/image/Vector.png" alt="" class="w-4 h-4" />
+
         <input
           type="text"
-          placeholder="Search for products..."
-          class="outline-none hidden md:block w-80 lg:w-96 px-2 bg-transparent text-sm"
+          id="search-input"
+          placeholder="Search for product"
+          class="outline-none bg-transparent hidden md:block w-96"
         />
       </div>
+      <!-- <div
+        class="bg-[#F0F0F0] rounded-2xl flex gap-2 px-3 py-2 items-center relative w-full max-w-xs md:max-w-md mx-2"
+      >
+        <img
+          src="./asset/image/Vector.png"
+          alt="Search Icon"
+          class="w-4 h-4 shrink-0"
+        />
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for product..."
+          class="outline-none bg-transparent w-full text-sm placeholder-gray-500"
+        />
+      </div> -->
 
-      <div class="flex md:gap-8 gap-5 items-center">
+      <!-- Action Icons -->
+      <div class="flex items-center gap-4 md:gap-10">
         <a href="./cart.html" class="relative">
           <img src="./asset/image/Frame.png" alt="Cart" class="w-6 h-6" />
           <span
@@ -74,70 +92,53 @@
             >0</span
           >
         </a>
-        <a href="#"
-          ><img src="./asset/image/Frame (1).png" alt="Account" class="w-6 h-6"
-        /></a>
+        <a href="#">
+          <img
+            src="./asset/image/Frame (1).png"
+            alt="Account"
+            class="w-6 h-6"
+          />
+        </a>
       </div>
     </nav>
 
-    <!-- MOBILE NAVIGATION DRAWER -->
-    <nav
-      id="mobile-nav"
-      class="bg-gray-100 px-6 py-8 w-[85%] sm:w-[60%] h-full md:hidden hidden flex-col justify-between fixed top-0 left-0 z-[999] shadow-2xl transition-all"
-    >
-      <div>
-        <img src="./asset/image/SHOP.CO.png" alt="SHOP.CO" class="h-6" />
-      </div>
-
-      <ul class="flex flex-col gap-6 my-auto">
-        <li>
-          <a href="./index.html" class="font-semibold text-2xl text-black"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="./shop.html" class="font-semibold text-2xl text-black"
-            >Shop</a
-          >
-        </li>
-        <li>
-          <a href="./category.html" class="font-semibold text-2xl text-black"
-            >On sale</a
-          >
-        </li>
-        <li>
-          <a href="./index.html" class="font-semibold text-2xl text-black"
-            >New Arrivals</a
-          >
-        </li>
-        <li>
-          <a href="./index.html" class="font-semibold text-2xl text-black"
-            >Brands</a
-          >
-        </li>
-      </ul>
-
-      <div class="flex flex-col gap-4 relative">
+    <!-- Mobile Navigation -->
+    <div id="mobile-nav" class="fixed inset-0 bg-black/50 z-50 hidden">
+      <div
+        class="bg-white w-[80%] max-w-sm h-full p-6 flex flex-col justify-between relative"
+      >
         <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-800 font-semibold py-3 w-full rounded-full"
-        >
-          <a href="./cart.html">Cart</a>
-        </button>
-        <button
-          class="bg-black text-white cursor-pointer hover:bg-gray-800 font-semibold py-3 w-full rounded-full"
-        >
-          Account
-        </button>
-
-        <div
           id="cancel-icon"
-          class="text-black font-bold text-2xl absolute right-0 -top-64 cursor-pointer"
+          class="absolute right-5 top-12 text-xl font-bold"
         >
           ✕
+        </button>
+
+        <div class="mt-8 flex flex-col gap-6">
+          <img src="./asset/image/SHOP.CO.png" alt="Logo" class="w-32 mb-4" />
+          <ul class="flex flex-col gap-4 text-lg font-semibold">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./category.html">On Sale</a></li>
+            <li><a href="./index.html">New Arrivals</a></li>
+            <li><a href="./index.html">Brands</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a
+            href="./cart.html"
+            class="bg-black text-white text-center py-3 rounded-full font-medium"
+            >View Cart</a
+          >
+          <button
+            class="bg-black text-white cursor-pointer hover:bg-gray-950 font-semibold py-3 w-full rounded-full"
+          >
+            Account
+          </button>
         </div>
       </div>
-    </nav>
-
+    </div>
     <!-- MAIN CART SECTION -->
     <div
       class="max-w-7xl mx-auto px-4 md:px-10 py-6 pt-32 md:pt-40"
@@ -224,35 +225,22 @@
       </div>
     </div>
 
-    <!-- NEWSLETTER SECTION -->
-    <section class="px-4 py-10 md:px-10 max-w-7xl mx-auto">
+    <!-- Newsletter -->
+    <section class="max-w-7xl mx-auto px-4 -mb-16 relative z-10">
       <div
-        class="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#000000] rounded-3xl px-6 py-8 md:px-10 md:py-9 lg:px-12"
+        class="bg-black text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-6"
       >
-        <div class="w-full">
-          <h2
-            class="max-w-[360px] text-3xl font-extrabold md:max-w-none md:text-4xl lg:text-5xl text-white leading-tight"
-          >
-            STAY UPTO DATE ABOUT <br class="hidden md:block" />
-            OUR LATEST OFFERS
-          </h2>
-        </div>
-        <form
-          class="w-full flex flex-col gap-4 md:w-[42%]"
-          onsubmit="event.preventDefault()"
-        >
-          <div
-            class="flex gap-3 rounded-full items-center bg-white h-12 md:h-14 px-5 w-full"
-          >
-            <img src="./asset/Frame (3).png" alt="" class="w-5 h-5" />
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              class="w-full bg-transparent text-black outline-none text-sm"
-            />
-          </div>
+        <h2 class="text-3xl md:text-4xl font-black max-w-md">
+          STAY UP TO DATE ABOUT OUR LATEST OFFERS
+        </h2>
+        <form class="w-full md:w-auto flex flex-col gap-3 min-w-[300px]">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            class="bg-white text-black px-5 py-3 rounded-full outline-none text-sm"
+          />
           <button
-            class="h-12 md:h-14 rounded-full bg-white px-6 w-full font-medium transition hover:bg-gray-200 text-black text-sm"
+            class="bg-white text-black font-semibold py-3 rounded-full hover:bg-gray-200 transition text-sm"
           >
             Subscribe to Newsletter
           </button>
@@ -260,106 +248,135 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <section class="bg-[#F0F0F0]">
-      <div
-        class="md:flex md:flex-row flex flex-col md:gap-20 lg:gap-35 gap-10 p-5 md:p-12 max-w-7xl mx-auto"
-      >
-        <div class="space-y-4">
-          <img src="./asset/image/SHOP.CO.png" alt="SHOP.CO" />
-          <p class="text-sm text-gray-600 w-full md:w-64">
-            We have clothes that suit your style and which you’re proud to wear.
-            From women to men.
-          </p>
-          <div class="flex gap-3 pt-2">
-            <a href="https://x.com"><img src="./asset/1.png" alt="X" /></a>
-            <a href="https://www.facebook.com"
-              ><img src="./asset/2.png" alt="Facebook"
-            /></a>
-            <a href="https://www.instagram.com/?hl=en"
-              ><img src="./asset/3.png" alt="Instagram"
-            /></a>
-            <a href="https://github.com/adegbolaadeyemi"
-              ><img src="./asset/4.png" alt="GitHub"
-            /></a>
+    <!-- Footer -->
+    <footer
+      class="bg-[#F0F0F0] pt-24 pb-12 px- md:px-16 border-t border-gray-200"
+    >
+      <section class="bg-[#F0F0F0]">
+        <div
+          class="md:flex md:flex-row flex flex-col md:gap-28 gap-15 p-5 md:p-15"
+        >
+          <div class="">
+            <img src="./asset/image/SHOP.CO.png" alt="" />
+
+            <p class="mt-4 w-80 mb-9">
+              We have clothes that suits your style and which you’re proud to
+              wear. From women to men.
+            </p>
+
+            <div class="flex gap-3 md:mt-8 mt-4">
+              <a href="https://x.com">
+                <img src="./asset/1.png" alt="" />
+              </a>
+
+              <a href="https://www.facebook.com">
+                <img src="./asset/2.png" alt="" />
+              </a>
+
+              <a href="https://www.instagram.com/?hl=en">
+                <img src="./asset/3.png" alt="" />
+              </a>
+
+              <a href="https://github.com/adegbolaadeyemi">
+                <img src="./asset/4.png" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <div class="flex gap-20 md:gap-25">
+            <!-- COMPANY -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">COMPANY</h1>
+
+              <a href="">About</a>
+
+              <a href="">Features</a>
+
+              <a href="">Work</a>
+
+              <a href="">Career</a>
+            </div>
+
+            <!-- HELP -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">HELP</h1>
+
+              <a href="">Customer Support</a>
+
+              <a href="">Delivery Details</a>
+
+              <a href="">Terms & Condition</a>
+
+              <a href="">Privacy Policy</a>
+            </div>
+          </div>
+
+          <div class="flex gap-15 md:gap-20">
+            <!-- FAQ  -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">FAQ</h1>
+
+              <a href="">Account</a>
+
+              <a href="">Manage Deliveries</a>
+
+              <a href="">Orders</a>
+
+              <a href="">Payments</a>
+            </div>
+
+            <!-- RESOURCES -->
+
+            <div class="flex-col flex gap-4">
+              <h1 class="font-light text-2xl text-black">RESOURCES</h1>
+
+              <a href="">Free eBooks</a>
+
+              <a href="">Development Tutorial</a>
+
+              <a href="">How to - Blog</a>
+
+              <a href="">Youtube Playlist</a>
+            </div>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full">
-          <div class="flex-col flex gap-3 text-sm">
-            <h1 class="font-bold text-base text-black tracking-wider">
-              COMPANY
-            </h1>
-            <a href="" class="text-gray-600 hover:text-black">About</a>
-            <a href="" class="text-gray-600 hover:text-black">Features</a>
-            <a href="" class="text-gray-600 hover:text-black">Work</a>
-            <a href="" class="text-gray-600 hover:text-black">Career</a>
-          </div>
-          <div class="flex-col flex gap-3 text-sm">
-            <h1 class="font-bold text-base text-black tracking-wider">HELP</h1>
-            <a href="" class="text-gray-600 hover:text-black"
-              >Customer Support</a
-            >
-            <a href="" class="text-gray-600 hover:text-black"
-              >Delivery Details</a
-            >
-            <a href="" class="text-gray-600 hover:text-black"
-              >Terms & Conditions</a
-            >
-            <a href="" class="text-gray-600 hover:text-black">Privacy Policy</a>
-          </div>
-          <div class="flex-col flex gap-3 text-sm">
-            <h1 class="font-bold text-base text-black tracking-wider">FAQ</h1>
-            <a href="" class="text-gray-600 hover:text-black">Account</a>
-            <a href="" class="text-gray-600 hover:text-black"
-              >Manage Deliveries</a
-            >
-            <a href="" class="text-gray-600 hover:text-black">Orders</a>
-            <a href="" class="text-gray-600 hover:text-black">Payments</a>
-          </div>
-          <div class="flex-col flex gap-3 text-sm">
-            <h1 class="font-bold text-base text-black tracking-wider">
-              RESOURCES
-            </h1>
-            <a href="" class="text-gray-600 hover:text-black">Free eBooks</a>
-            <a href="" class="text-gray-600 hover:text-black"
-              >Development Tutorial</a
-            >
-            <a href="" class="text-gray-600 hover:text-black">How to - Blog</a>
-            <a href="" class="text-gray-600 hover:text-black"
-              >Youtube Playlist</a
-            >
+        <hr class="mt-5" />
+
+        <div
+          class="flex flex-col md:flex md:flex-row gap-4 mb-0 md:justify-between p-8 md:p-12"
+        >
+          <h3 class="font-light text-lg">
+            Shop.co © 2000-2023, All Rights Reserved
+          </h3>
+
+          <div class="flex">
+            <a href="https://www.visa.com/en-us/personal/cards">
+              <img src="./asset/Badge.png" alt="" />
+            </a>
+
+            <a href="https://www.mastercard.com/mea/en.html">
+              <img src="./asset/Badge (1).png" alt="" />
+            </a>
+
+            <a href="https://www.paypal.com/ng/home">
+              <img src="./asset/Badge (2).png" alt="" />
+            </a>
+
+            <a href="https://www.apple.com/apple-pay/">
+              <img src="./asset/Badge (3).png" alt="" />
+            </a>
+
+            <a href="https://pay.google.com">
+              <img src="./asset/Badge (4).png" alt="" />
+            </a>
           </div>
         </div>
-      </div>
-
-      <hr class="border-gray-300 max-w-7xl mx-auto" />
-
-      <div
-        class="flex flex-col md:flex-row gap-4 justify-between items-center p-6 md:p-10 max-w-7xl mx-auto"
-      >
-        <h3 class="text-sm text-gray-500">
-          Shop.co © 2000-2026, All Rights Reserved
-        </h3>
-        <div class="flex gap-2">
-          <a href="https://www.visa.com"
-            ><img src="./asset/Badge.png" alt="Visa" class="h-8"
-          /></a>
-          <a href="https://www.mastercard.com"
-            ><img src="./asset/Badge (1).png" alt="Mastercard" class="h-8"
-          /></a>
-          <a href="https://www.paypal.com"
-            ><img src="./asset/Badge (2).png" alt="PayPal" class="h-8"
-          /></a>
-          <a href="https://www.apple.com/apple-pay/"
-            ><img src="./asset/Badge (3).png" alt="Apple Pay" class="h-8"
-          /></a>
-          <a href="https://pay.google.com"
-            ><img src="./asset/Badge (4).png" alt="Google Pay" class="h-8"
-          /></a>
-        </div>
-      </div>
-    </section>
+      </section>
+    </footer>
 
     <script src="cart.js"></script>
   </body>

@@ -16,6 +16,47 @@ if (menuIcon && mobileNav && cancelIcon) {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+
+  if (searchInput) {
+    // 1. Real-time filtering as you type
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase().trim();
+
+      // Target product cards on your category/shop page
+      const productCards = document.querySelectorAll("main .group");
+
+      productCards.forEach((card) => {
+        // Get product title text inside the card
+        const titleElement = card.querySelector("h3");
+        if (titleElement) {
+          const titleText = titleElement.textContent.toLowerCase();
+          if (titleText.includes(query)) {
+            card.style.display = "block"; // Show item
+          } else {
+            card.style.display = "none"; // Hide item
+          }
+        }
+      });
+    });
+
+    // 2. Redirect on Enter key (Optional: useful if user presses Enter on another page)
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && searchInput.value.trim() !== "") {
+        const query = encodeURIComponent(searchInput.value.trim());
+        // Redirect to shop page with query string if not already there
+        if (
+          !window.location.pathname.includes("category.html") &&
+          !window.location.pathname.includes("shop.html")
+        ) {
+          window.location.href = `./category.html?search=${query}`;
+        }
+      }
+    });
+  }
+});
+
 // ==========================================
 // 2. SHARED CART STORAGE & TRACKING LOGIC
 // ==========================================
@@ -43,8 +84,7 @@ function getCart() {
       color: "White",
       price: 145,
       quantity: 1,
-      image:
-        "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300",
+      image: "",
     },
     {
       id: "prod-2",
@@ -53,8 +93,7 @@ function getCart() {
       color: "Red",
       price: 180,
       quantity: 1,
-      image:
-        "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300",
+      image: "",
     },
     {
       id: "prod-3",
@@ -63,8 +102,7 @@ function getCart() {
       color: "Black",
       price: 120,
       quantity: 1,
-      image:
-        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=300",
+      image: "",
     },
     {
       id: "prod-4",
@@ -73,8 +111,7 @@ function getCart() {
       color: "Blue",
       price: 180,
       quantity: 1,
-      image:
-        "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300",
+      image: "",
     },
   ];
   saveCart(defaultItems);
