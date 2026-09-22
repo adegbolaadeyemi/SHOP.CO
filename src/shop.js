@@ -252,7 +252,7 @@ function renderRelatedProducts() {
         <div class="flex flex-col gap-2 justify-between bg-white p-3 rounded-2xl border border-gray-100 hover:shadow-md transition">
           <div>
             <div class="bg-[#F0EEED] rounded-xl overflow-hidden aspect-square flex items-center justify-center p-4 relative group">
-              <img src="${product.image}" alt="${product.title}" class="w-full h-full object-contain group-hover:scale-105 transition duration-300" />
+              <img src="${product.image}" alt="${product.title}" class="w-full h-full object-contain md:group-hover:scale-105 md:transition md:duration-300 duration-300 transition group-hover:scale-105" " />
             </div>
             <h3 class="font-bold text-sm md:text-base mt-3 line-clamp-1">${product.title}</h3>
             <div class="flex items-center gap-2 my-1">

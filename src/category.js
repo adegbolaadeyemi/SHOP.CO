@@ -130,7 +130,7 @@ function addToCart(title, price, image) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartBadge();
-  alert(`Added "${title}" to your cart!`);
+  `Added "${title}" to your cart!`;
 }
 
 // Update badge count displayed on top-right cart icon
@@ -181,7 +181,7 @@ function addToCart(product) {
 
   // 3. Save back to localStorage
   localStorage.setItem("shopco_cart", JSON.stringify(cart));
-  alert("Item added to cart!");
+  ("Item added to cart!");
 }
 function addToCart(name, price, image, size = "Medium", color = "Default") {
   // 1. Get existing cart items from LocalStorage

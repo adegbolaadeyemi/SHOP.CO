@@ -23,7 +23,7 @@
 
     <!-- Desktop & Main Navbar -->
     <nav
-      class="fixed top-6 left-0 w-full z-40 bg-white border-b border-gray-100 px-4 md:px-12 py-3 flex items-center justify-between"
+      class="fixed top-6 left-0 w-full z-40 bg-white border-b border-gray-100 px-4 md:px-12 py-8 flex items-center justify-between"
     >
       <div class="flex items-center gap-4">
         <img
@@ -46,9 +46,9 @@
           <a href="./category.html" class="hover:text-gray-600">On Sale</a>
         </li>
         <li>
-          <a href="./index.html" class="hover:text-gray-600">New Arrivals</a>
+          <a href="#new-arrivals" class="hover:text-gray-600">New Arrivals</a>
         </li>
-        <li><a href="./index.html" class="hover:text-gray-600">Brands</a></li>
+        <li><a href="#brands" class="hover:text-gray-600">Brands</a></li>
       </ul>
 
       <!-- Search Input -->
@@ -97,8 +97,8 @@
             <li><a href="./index.html">Home</a></li>
             <li><a href="./shop.html">Shop</a></li>
             <li><a href="./category.html">On Sale</a></li>
-            <li><a href="./index.html">New Arrivals</a></li>
-            <li><a href="./index.html">Brands</a></li>
+            <li><a href="#new-arrivals">New Arrivals</a></li>
+            <li><a href="#brands">Brands</a></li>
           </ul>
         </div>
 
@@ -194,8 +194,12 @@
 
     <!-- BRAND SECTION -->
 
-    <div class="relative bg-black p-5 top-0">
-      <marquee behavior="" direction="" speed="12">
+    <div
+      class="relative bg-black p-4 top-0"
+      style="scroll-margin-top: 200px"
+      id="brands"
+    >
+      <marquee behavior="" direction="" speed="12" scrollamount="10">
         <div class="flex gap-15 py-5">
           <div class="text-white font-bold text-5xl md:text-7xl">BRANDS:</div>
 
@@ -213,17 +217,18 @@
     </div>
 
     <!-- New Arrivals -->
-    <section class="max-w-7xl mx-auto px-4 py-16">
+    <section class="max-w-7xl mx-auto px-4 py-16 md:mt-10">
       <h2 class="text-3xl md:text-5xl font-black text-center mb-10">
         NEW ARRIVALS
       </h2>
       <div
         id="new-arrivals"
         class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+        style="scroll-margin-top: 200px"
       ></div>
       <div class="text-center mt-10">
         <a
-          href="./shop.html"
+          href="./category.html"
           class="inline-block border border-gray-300 px-12 py-3 rounded-full hover:bg-black hover:text-white transition font-medium text-sm"
           >View All</a
         >

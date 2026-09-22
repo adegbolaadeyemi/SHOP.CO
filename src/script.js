@@ -142,7 +142,7 @@ function renderProductCard(product) {
   return `
     <div class="flex flex-col justify-between group">
       <div class="img bg-[#F0EEED] rounded-2xl p-4 mb-3 relative overflow-hidden flex items-center justify-center h-48 md:h-64">
-        <img src="${product.image}" alt="${product.name}" class="max-h-full object-contain group-hover:scale-105 transition duration-300" />
+        <img src="${product.image}" alt="${product.name}" class="max-h-full object-contain md:group-hover:scale-105 md:transition md:duration-300 duration-300 transition group-hover:scale-105" />
       </div>
       <h3 class="font-bold text-sm md:text-base text-black truncate mb-1">${product.name}</h3>
       
@@ -153,15 +153,15 @@ function renderProductCard(product) {
       </div>
 
       <!-- Price & Action -->
-      <div class="flex items-center justify-between">
+      <div class="flex-col items-center justify-between">
         <div class="flex items-center gap-2">
           <span class="text-lg md:text-xl font-bold">$${product.price}</span>
           ${product.originalPrice ? `<span class="text-gray-400 line-through text-sm font-bold">$${product.originalPrice}</span>` : ""}
           ${product.discount ? `<span class="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-medium">${product.discount}</span>` : ""}
         </div>
-        <button onclick="addToCartById(${product.id})" class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition cursor-pointer">
-          +
-        </button>
+        <bdiv onclick="addToCartById(${product.id})" class="w-33 mt-5 h-8 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition cursor-pointer">
+          Add to cart
+        </div>
       </div>
     </div>
   `;
@@ -231,7 +231,7 @@ function addToCartItem(name, price, image, size = "Medium", color = "Default") {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   updateCartBadge();
-  alert(`${name} added to cart!`);
+  `${name} added to cart!`;
 }
 
 // Badge Counter Update
